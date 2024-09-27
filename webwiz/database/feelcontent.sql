@@ -1,0 +1,8 @@
+CREATE TABLE content (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    emotion VARCHAR(10) NOT NULL,
+    type VARCHAR(10) NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    description TEXT NOT NULL,
+    url VARCHAR(255) NOT NULL
+);

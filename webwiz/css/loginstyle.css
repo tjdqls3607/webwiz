@@ -1,0 +1,124 @@
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+body {
+  background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#wrap {
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: table-cell;
+  list-style: none
+}
+
+label {
+  color: #2c2c2c;
+  display: block;
+  margin: 16px 0 8px;
+}
+
+input::placeholder {
+  color: #5fa37a;
+  /* 원하는 색상으로 변경 */
+  opacity: 1;
+  /* 필요에 따라 불투명도 조정 */
+}
+
+input[type="text"] {
+  border: 2px solid #5fa37a;
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 8px 0;
+  padding: 16px 24px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+input[type="password"] {
+  border: 2px solid #5fa37a;
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 8px 0;
+  padding: 16px 24px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+li span {
+  font-size: 17px;
+  color: #5fa37a;
+}
+
+
+
+input[type="checkbox"]:checked+span {
+  color: #126b54;
+  font-weight: bold;
+}
+
+input[type="checkbox"]:checked {
+  background: #126b54;
+  border: none;
+}
+
+button {
+  background-color: #126b54;
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 24px 0;
+  padding: 16px;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.login {
+  margin: 120px auto;
+  width: 500px;
+}
+
+.login-title {
+  color: #074635;
+  font-size: 48px;
+  font-weight: 700;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.login-forgot {
+  display: table;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+}
+
+.login-forgot-link {
+  font-size: 16px;
+  text-align: center;
+  text-decoration: underline;
+  color: #5fa37a;
+}

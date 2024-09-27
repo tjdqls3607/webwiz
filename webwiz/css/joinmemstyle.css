@@ -1,0 +1,171 @@
+html {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+body {
+    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#wrap {
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: table-cell;
+    list-style: none
+}
+
+input::placeholder {
+    color: #5fa37a;
+    /* 원하는 색상으로 변경 */
+    opacity: 1;
+    /* 필요에 따라 불투명도 조정 */
+}
+
+div.textbox {
+    border: 2px solid #5fa37a;
+    display: flex;
+    line-height: 24px;
+    margin: 8px 0;
+    padding: 16px 24px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+span.icon {
+    padding-right: 15px;
+    vertical-align: text-top;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+img.icon {
+    height: 30px;
+    width: 30px;
+    opacity: 0.5;
+}
+
+input[type="text"] {
+    border: 0;
+    font-size: 16px;
+    width: 80%;
+}
+
+
+
+input[type="password"] {
+    border: 0;
+    font-size: 16px;
+    width: 100%;
+}
+
+.gender_list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.gender_list li {
+    margin-right: 10px;
+    position: relative;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.gender_list label {
+    display: inline-block;
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    border: 2px solid #5fa37a;
+    line-height: 24px;
+    color: #5fa37a;
+    background-color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked+label {
+    border: 2px solid #126b54;
+    color: #ffffff;
+    background-color: #126b54;
+    font-weight: bold;
+}
+
+button {
+    background-color: #126b54;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 24px 0;
+    padding: 16px;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.join_member {
+    margin: 20px auto;
+    width: 90%
+}
+
+.mini-title {
+    color: #074635;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+div.form-container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+div.form-header {
+    margin: 0 auto;
+    width: 90%;
+}
+
+div.form-body {
+    margin: 10px auto;
+    width: 80%;
+    display: block;
+}
+
+div.horizon_align {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.horizon_child {
+    flex: 1;
+    margin-right: 10px;
+}
+
+div.horizon_child:last-child {
+    margin-right: 0; /* 마지막 항목에 오른쪽 마진 제거 */
+}

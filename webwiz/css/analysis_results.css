@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    /*그라데이션 배경*/
+    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+}
+
+.Y-M-D {
+    margin-bottom: 10px; /* 아래쪽 간격을 10px로 설정 */
+}
+
+.sentimental_image {
+    margin-bottom: 10px; /* 아래쪽 간격을 10px로 설정 */
+    width: 200px; /* 이미지의 너비를 설정합니다 */
+    height: 200px; /* 이미지의 높이를 자동으로 조정합니다 */
+    border: 2px solid #126b54; /* 이미지 주위에 2px 두께의 실선 테두리를 설정합니다 */
+    border-radius: 5px; /* 이미지의 테두리를 둥글게 만듭니다 */
+    display: block; /* 이미지를 블록 요소로 설정하여 다른 요소들과 가로 정렬합니다 */
+    margin: auto; /* 가로 정렬을 위해 왼쪽과 오른쪽 마진을 자동으로 설정합니다 */
+}
+
+.progress_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.progress_bar h2 {
+    margin: 0;
+    margin-bottom: 5px; /* 텍스트 사이의 간격을 조절합니다 */
+}
+
+.progress_bar progress {
+    width: 100%; /* 막대의 너비를 부모 요소의 너비와 같도록 설정합니다 */
+    height: 20px; /* 막대의 높이를 설정합니다 */
+    border-radius: 18px; /* 프로그래스 바의 테두리를 둥글게 만듭니다 */
+}
+
+.progress_bar progress::-webkit-progress-value {
+    background-image: linear-gradient(60deg, #5fa37a, #126b54); /*선형 그라디언트 배경을 설정*/
+    border-radius: 18px; /* 채우는 부분의 테두리를 둥글게 만듭니다 */
+}
+
+.progress_bar progress::-webkit-progress-bar {
+    background-color: #97c1a9; /* 프로그래스 바의 배경색 설정 */
+    border-radius: 18px; /* 프로그래스 바의 테두리를 둥글게 만듭니다 */
+}
+
+.content_recommendation {
+    margin-top: 20px; /* 위쪽 간격을 20px로 설정 */
+}
+
+/* 버튼 스타일 */
+.button {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #074635; /* 원하는 배경색으로 변경 */
+    border: none;
+    border-radius: 5px; 
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s; /* 마우스 호버 시 색상 전환 */
+}
+
+.button:hover {
+    background-color: #97c1a9; /* 마우스 호버 시 색상 변경 */
+}

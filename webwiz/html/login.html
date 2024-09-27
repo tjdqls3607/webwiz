@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeelFlow 로그인</title>
+    <link rel="stylesheet" href="/webwiz/webwiz/css/loginstyle.css">
+</head>
+
+<body>
+    <header>
+        <h2>FeelFlow</h2>
+    </header>
+    <form id="loginForm" class="login" method="POST" action="../php/login.php">
+        <h1 class="login-title">FeelFlow</h1><br>
+        <input name="username" type="text" placeholder="사용자 이름" required />
+        <input name="password" type="password" placeholder="비밀번호" required />
+        <ul>
+            <li><input style="margin-right: 20px;" type="checkbox" name="idAutoSave[]" value="아이디 저장"><span>아이디저장</span></li>
+            <li><input style="margin-right: 20px; margin-left: 20px;" type="checkbox" name="autoLogin[]" value="자동 로그인"><span>자동로그인</span></li>
+        </ul><br>
+        <button type="submit">로그인</button>
+            
+        <div id="wrap">
+            <ul class="login-forgot">
+                <li><a class="login-forgot-link" href="#">아이디</a></li>
+                <li><a class="login-forgot-link" href="#">비밀번호</a></li>
+                <li><a class="login-forgot-link" href="join_member.php">회원가입</a></li>
+            </ul>
+        </div>
+    </form>
+</body>
+
+</html>

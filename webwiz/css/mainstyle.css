@@ -1,0 +1,94 @@
+/* 기존 스타일 유지 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* 헤더 스타일 수정 */
+header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between; /* 로고와 네비게이션을 양쪽 끝에 배치 */
+    align-items: center; /* 로고와 네비게이션을 같은 높이에 배치 */
+    color: #000;
+    padding: 0 20px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 48px;
+}
+
+/* 네비게이션 스타일 */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* 메뉴 항목 간 간격 */
+    margin: 0; /* 기본 마진 제거 */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0; /* 배경색 변경 */
+    border-radius: 5px;
+}
+
+/* 기존 스타일 유지 */
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px); /* 헤더 높이를 제외한 공간을 차지 */
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+a:hover {
+    text-decoration: underline;
+}

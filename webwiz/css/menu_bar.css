@@ -1,0 +1,45 @@
+/*네비게이션바 스타일*/
+.menu-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
+
+.menu-button:hover {
+    background-color: #96cca8; /* 마우스 오버 시 배경색 변경 */
+}
+
+.menu-bar1 {
+    padding: 8px; /*세로, 가로 길이 설정*/
+    overflow: hidden;
+    display: flex; /* 일렬로 배치 */
+    justify-content: space-between; /* 좌우 간격 균등하게 */
+}
+
+.menu-bar2 {
+    padding: 8px; /*세로, 가로 길이 설정*/
+    overflow: hidden;
+    display: flex; /* 일렬로 배치 */
+    justify-content: space-between; /* 좌우 간격 균등하게 */
+}
+
+.menu-bar-item1 {
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #123b1b; /* 텍스트 색상 설정 */
+    font-size: 30px; /* 텍스트의 글씨 크기 설정 */
+    display: inline-block; /* 요소들이 한 줄에 분할되도록 함 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.menu-bar-item2 {
+    padding: 8px 16px; 
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    color: #123b1b; /* 텍스트 색상 설정 */
+    font-size: 15px; /* 텍스트의 글씨 크기 설정 */
+    text-decoration: none; /* 밑줄 제거 */
+}

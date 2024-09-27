@@ -1,0 +1,98 @@
+.main_div {
+    display: flex;
+    justify-content: center;
+}
+
+.leftbar {
+    border: 4px solid #5fa37a;
+    margin: 0 auto;
+    margin-right: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightbar {
+    margin: 0 auto;
+    margin-right: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.imoji_border {
+    border: 4px solid #5fa37a;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.right_side {
+    display: flex;
+    padding: 5px;
+    margin-bottom: 40px;
+}
+
+.right_side :last-of-type {
+    margin-bottom: 0px;
+}
+
+.side_element {
+    border: 3px solid #5fa37a;
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.element_img {
+    width: 30px;
+    height: 30px;
+}
+
+.right_div {
+    justify-content: center;
+    align-items: center;
+}
+
+.right_element {
+    border: 3px solid #5fa37a;
+    width: 40px;
+    height: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin: 5px;
+}
+
+textarea{
+    margin-top: 8px;
+    border-radius: 10px;
+    background-color: #f3faf4;
+    resize: none;
+    border: 1px solid rgb(94, 122, 100);
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+textarea.title{
+    height: 200px;
+}
+
+textarea.diary{
+    height: 800px;
+}
+
+textarea::placeholder {
+    padding: 5px;
+}
