@@ -35,20 +35,21 @@ $positive_score = round($result['document']['confidence']['positive'], 2);
 $neutral_score = round($result['document']['confidence']['neutral'], 2);
 $negative_score = round($result['document']['confidence']['negative'], 2);
 
-// 감정에 따른 이미지 경로 설정
-$image_path = "";
-$emotion = "";
-if ($positive_score > $neutral_score && $positive_score > $negative_score) {
-    $image_path = "sunny.png";
-    $emotion = "positive";
-} elseif ($neutral_score > $positive_score && $neutral_score > $negative_score) {
-    $image_path = "normal.png";
-    $emotion = "neutral";
-} else {
-    $image_path = "cloudrainy.png";
-    $emotion = "negative";
+// 감정 상태 결정 함수
+function determineEmotionState($positive, $neutral, $negative) {
+    if ($positive > 80) return ["매우 긍정적", "sunny.png"];
+    if ($positive > 60) return ["긍정적", "sunny.png"];
+    if ($positive > 40 && $neutral > 30) return ["약간 긍정적", "mostly_sunny.png"];
+    if ($neutral > 50) return ["중립적", "normal.png"];
+    if ($negative > 40 && $neutral > 30) return ["약간 부정적", "partly_cloudy.png"];
+    if ($negative > 60) return ["부정적", "cloudy.png"];
+    if ($negative > 80) return ["매우 부정적", "stormy.png"];
+    return ["복합적", "mixed.png"];
 }
-$image_path = "/webwiz/webwiz/imgsrc/" . $image_path; // 이미지 경로 설정
+
+// 감정 상태 결정
+list($emotion_state, $image_filename) = determineEmotionState($positive_score, $neutral_score, $negative_score);
+$image_path = "/webwiz/webwiz/imgsrc/" . $image_filename;
 
 // 데이터베이스 연결
 $servername = "localhost";
@@ -65,14 +66,14 @@ if ($conn->connect_error) {
 // 사용자의 일기 내용과 제목 데이터베이스에 저장
 $user_id = $_SESSION['user_id']; // 세션에서 사용자 ID 가져오기
 $title = $_POST['title1']; // 제목 가져오기
-$sql_insert_diary = "INSERT INTO diaries (user_id, title, content) VALUES ('$user_id', '$title', '$content')";
+$sql_insert_diary = "INSERT INTO diaries (user_id, title, content, emotion_state) VALUES ('$user_id', '$title', '$content', '$emotion_state')";
 
 if ($conn->query($sql_insert_diary) === false) {
     echo "Error: " . $sql_insert_diary . "<br>" . $conn->error;
 }
 
 // 감정에 따른 콘텐츠 가져오기
-$sql = "SELECT type, title, description, url FROM content WHERE emotion='$emotion'";
+$sql = "SELECT type, title, description, url FROM content WHERE emotion='$emotion_state'";
 $result = $conn->query($sql);
 
 $contents = [];
@@ -92,10 +93,15 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/webwiz/webwiz/css/analysis_results.css">
     <link rel="stylesheet" href="/webwiz/webwiz/css/menu_bar.css">
-    <link rel="stylesheet" href="/webwiz/webwiz/css/sidebar.css">
     <style>
         .Y-M-D {
-            margin-top: 200px; /* 상단과의 간격 조정 */
+            margin-top: 200px;
+        }
+        .emotion_state {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            color: #333;
         }
     </style>
 </head>
@@ -116,7 +122,6 @@ $conn->close();
 </div>
 
 <div class="main_div">
-
     <div style="margin-right: 50px;">
         <div class="Y-M-D">
             <?php
@@ -137,6 +142,10 @@ $conn->close();
         <div class="sentimental_image">
             <img src="<?php echo $image_path; ?>" alt="Sentimental Image">
         </div><br>
+
+        <div class="emotion_state">
+            <h2>현재 감정 상태: <?php echo $emotion_state; ?></h2>
+        </div>
 
         <div class="progress_bar">
             <h2>긍정: <?php echo $positive_score; ?>%</h2>
