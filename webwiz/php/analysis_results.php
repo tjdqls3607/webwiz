@@ -1,4 +1,8 @@
 <?php
+// 모든 오류를 화면에 표시
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // 세션 시작
 session_start();
 
@@ -25,12 +29,16 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 $response = curl_exec($ch);
 if ($response === false) {
-    die('Error occurred during the API request');
+    die('Error occurred during the API request: ' . curl_error($ch));
 }
 curl_close($ch);
 
 // API 응답 처리
 $result = json_decode($response, true);
+if ($result === null) {
+    die('Error decoding JSON response: ' . json_last_error_msg());
+}
+
 $positive_score = round($result['document']['confidence']['positive'], 2);
 $neutral_score = round($result['document']['confidence']['neutral'], 2);
 $negative_score = round($result['document']['confidence']['negative'], 2);
@@ -77,13 +85,17 @@ $sql = "SELECT type, title, description, url FROM content WHERE emotion='$emotio
 $result = $conn->query($sql);
 
 $contents = [];
-if ($result->num_rows > 0) {
+if ($result === false) {
+    die("Error in SQL query: " . $conn->error);
+} elseif ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $contents[] = $row;
     }
 }
+
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="ko">
