@@ -128,4 +128,16 @@ body {
 .fc-event-title {
     display: none;
 }
-  
+
+/* FullCalendar에서 스크롤을 완전히 제거 */
+.fc-scroller, .fc-scroller-liquid {
+  overflow: hidden !important; /* 스크롤을 없애기 위해 오버플로우 숨기기 */
+}
+
+.fc .fc-daygrid-day-frame {
+  height: auto !important; /* 각 셀의 높이를 자동으로 설정 */
+}
+
+.fc .fc-daygrid-day {
+  height: auto !important; /* 각 날짜 셀의 높이를 자동으로 설정 */
+}
