@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /*그라데이션 배경*/
+    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+}
+
+/* 캘린더 크기 */
+.calendar-box {
+    width: 700px;
+    height: 600px;
+    position: relative;
+    top: 100px;
+    left: 25%;
+    background-color: white;
+}
+
+/* FullCalendar 기본 레이아웃 조정 */
+.fc-theme-standard {
+    position: relative;
+    width: 95%;
+    margin-left: 15px;
+    background-color: white;
+}
+  
+/* 월 타이틀 폰트 및 위치 조정 */
+.fc .fc-toolbar-title {
+    position: relative;
+    top: 10px;
+    left: 250px;    
+}
+
+/* 이전, 다음 버튼 */
+.fc-prev-button.fc-button.fc-button-primary,
+.fc-next-button.fc-button.fc-button-primary {
+    display: flex;
+    background-color: #00AE68;
+    top: 10px;
+    border: 0;
+    outline: 0;
+}
+  
+.fc-prev-button.fc-button-primary {
+    right: 470px;
+}
+
+.fc-next-button.fc-button-primary {
+    right: 150px;
+}
+  
+.fc-prev-button.fc-button-primary:active,
+.fc-next-button.fc-button-primary:active {
+    background-color: #00AE68;
+  }
+  
+/* 오늘 버튼 */
+  .fc-today-button.fc-button.fc-button-primary {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    background-color: #00AE68;
+    color: white;
+    border: none;
+}
+  
+.fc-today-button.fc-button-primary:active {
+    background-color: #00AE68;
+}
+  
+/* 날짜 및 요일 */
+.fc .fc-daygrid-day-number {
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+  
+.fc-day-sun {
+    color: red;
+}
+  
+.fc-day-sat {
+    color: blue;
+}
+  
+.fc-col-header {
+    border-bottom: 1.5px solid rgb(27, 0, 0);
+}
+  
+/* 테이블 기본 스타일 초기화 */
+.fc th, .fc td {
+    vertical-align: middle;
+}
+  
+.fc-theme-standard th, .fc-theme-standard td {
+    border: 0;
+}
+  
+/* dayGrid 높이 및 레이아웃 조정 */
+  .fc .fc-daygrid-day-frame {
+    height: 85px;
+    overflow: hidden;
+    margin: auto;
+}
+  
+.fc .fc-daygrid-day-top {
+    display: block;
+}
+  
+.fc-daygrid-dot-event:hover,
+.fc-daygrid-dot-event.fc-event-mirror {
+    background: none;
+}
+  
+.fc-daygrid-event-dot {
+    display: flex;
+    position: relative;
+    height: max-content;
+    border-width: 10px;
+    border-radius: 50px;
+    left: 30px;
+}
+  
+/* 시간 및 이벤트 제목 숨김 */
+.fc-event-time,
+.fc-event-title {
+    display: none;
+}
+  

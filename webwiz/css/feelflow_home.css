@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /*그라데이션 배경*/
+    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+}
+
+/*홈페이지 첫번째 부분*/
+.main-section {
+    padding: 80px 20px;
+}
+
+.main-section h1 {
+    font-size: 24px;
+    /*글씨 색상*/
+    color: #333;
+}
+
+.main-section p {
+    /*글씨 색상*/
+    color: #555;
+}
+
+.main-section button {
+    background-color: #00AE68;
+    color: white;
+    /* 내부 여백 설정 */
+    padding: 5px 10px;
+    /* 외부 여백 설정 */
+    margin: 10px 20px 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*홈페이지 두번째 부분*/
+.service-overview {
+    padding: 100px 180px;
+    display: flex;
+}
+
+.service-overview img {
+    width: 100%;
+    height: 70%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.service-overview h4 {
+    /*글씨 색상*/
+    color: #555;
+}
+
+.service-overview p {
+    /*글씨 크기*/
+    font-size: 24px;
+    /*글씨 색상*/
+    color: #333;
+}
+
+.service-overview h2 {
+    /*글씨 크기*/
+    font-size: 17px;
+    /*글씨 색상*/
+    color: #555;
+    /*글씨 두께*/
+    font-weight: normal;
+}
+
+.service-overview button {
+    background-color: #00AE68;
+    color: white;
+    /* 내부 여백 설정 */
+    padding: 5px 10px;
+    /* 외부 여백 설정 */
+    margin: 10px 20px 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*홈페이지 세번째 부분*/
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+}
+
+.features div {
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.features div img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #96cca8;
+    color: #fff;
+}
