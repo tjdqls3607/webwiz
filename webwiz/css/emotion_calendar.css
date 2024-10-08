@@ -56,18 +56,25 @@ body {
   }
   
 /* 오늘 버튼 */
-  .fc-today-button.fc-button.fc-button-primary {
+.fc-today-button.fc-button.fc-button-primary {
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 100;
-    background-color: #00AE68;
-    color: white;
+    background-image: url("heart_833459.png"); /* 이미지 경로 */
+    background-size: cover; /* 버튼 크기에 맞게 이미지 확대 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    background-color: transparent; /* 배경색 제거 */
+    width: 60px; /* 버튼의 너비 설정 (이미지 크기에 맞게 조정) */
+    height: 40px; /* 버튼의 높이 설정 (이미지 크기에 맞게 조정) */
     border: none;
+    text-indent: -9999px; /* 버튼 텍스트 숨기기 */
 }
-  
+
+/* 버튼 클릭 시 */
 .fc-today-button.fc-button-primary:active {
-    background-color: #00AE68;
+    background-image: url("heart_833459.png"); /* 클릭 시 변경될 이미지 */
+    background-size: cover;
 }
   
 /* 날짜 및 요일 */
