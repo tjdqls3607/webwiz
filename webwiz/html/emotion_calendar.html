@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu_bar.css">
+    <link rel="stylesheet" href="emotion_calendar.css">
+
+    <!-- FullCalendar의 CSS 파일 불러오기, cdn.jsdelivr.net 경로 -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 네비게이션바 : 머리말 부분-->
+    <div class="menu-top">
+        <div class="menu-bar2 menu-bar-item2">
+            <a href="feelflow_home.html" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
+            <!-- 네비게이션바 -->
+            <div class="menu-bar2">
+                <a href="diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
+                <a href="emotion_calendar.html" class="menu-button menu-bar-item2">감정 캘린더</a>
+                <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
+                <a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>
+                <a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>
+                <!--마이메이지, 사용자 이미지로 변경하기-->
+                <a href="feel_mypage.php" class="menu-button menu-bar2 menu-bar-item2">마이페이지</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="calendar-box">
+        <div id="calendar"></div>
+    </div>
+
+    <!-- FullCalendar 자바스크립트 라이브러리, 달력을 구현 -->
+    <!-- CDN으로 FullCalendar를 불러오고 있기 때문에 별도의 설치가 필요하지 않다, cdn.jsdelivr.net 경로 -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/ko.js"></script> 
+     
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+    
+          // FullCalendar 생성
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            // 달력이 월간 보기로 시작
+            initialView: 'dayGridMonth',
+            // 한국어 로케일 설정, 달력이 한국어로 표시되도록 설정
+            locale: 'ko', 
+            // 달력의 스타일
+            eventDisplay: 'list-item',
+            // 달력의 이벤트 표시 방법
+            dayMaxEventRows: true,
+
+            // 하드코딩된 이벤트 추가 // 날짜별 일기의 감정분석 결과에 맞는 날씨 이모지 불러오는 기능 수정 필요!
+            events: [
+              { title: 'Event 1', start: '2024-10-01' },
+              { title: 'Event 2', start: '2024-10-05' }
+            ]
+          });
+    
+          calendar.render(); // 캘린더 렌더링
+        });
+      </script> 
+
+
+
+</body>
+</html>
