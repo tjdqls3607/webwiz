@@ -9,7 +9,7 @@ body {
 
 /*홈페이지 첫번째 부분*/
 .main-section {
-    padding: 80px 20px;
+    padding: 120px 20px;
 }
 
 .main-section h1 {
@@ -37,7 +37,7 @@ body {
 
 /*홈페이지 두번째 부분*/
 .service-overview {
-    padding: 100px 180px;
+    padding: 120px 200px;
     display: flex;
 }
 
