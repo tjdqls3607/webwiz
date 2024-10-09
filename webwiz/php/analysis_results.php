@@ -1,7 +1,5 @@
 <?php
-// 모든 오류를 화면에 표시
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 // 세션 시작
 session_start();
@@ -46,7 +44,7 @@ $negative_score = round($result['document']['confidence']['negative'], 2);
 // 감정 상태 결정 함수
 function determineEmotionState($positive, $neutral, $negative) {
     if ($positive > 80) return ["매우 긍정적", "sunny.png"];
-    if ($positive > 60) return ["긍정적", "goodnignt.png"];
+    if ($positive > 60) return ["긍정적", "goodnight.png"];
     if ($positive > 40 && $neutral > 30) return ["약간 긍정적", "snow.png"];
     if ($neutral > 50) return ["중립적", "normal.png"];
     if ($negative > 40 && $neutral > 30) return ["약간 부정적", "rainy.png"];
@@ -124,7 +122,7 @@ $conn->close();
         <a href="feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
         <div class="menu-bar2">
             <a href="../html/diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
-            <a href="#emotion_calender" class="menu-button menu-bar-item2">감정 캘린더</a>
+            <a href="../html/emotion_calender.html" class="menu-button menu-bar-item2">감정 캘린더</a>
             <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
             <a href="content_recommend.html" class="menu-button menu-bar-item2">콘텐츠 추천</a>
             <a href="chatroom.css" class="menu-button menu-bar-item2">사용자 매칭</a>
