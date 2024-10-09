@@ -103,8 +103,8 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/webwiz/webwiz/css/analysis_results.css">
-    <link rel="stylesheet" href="/webwiz/webwiz/css/menu_bar.css">
+    <link rel="stylesheet" href="../css/analysis_results.css">
+    <link rel="stylesheet" href="../css/menu_bar.css">
     <style>
         .Y-M-D {
             margin-top: 200px;
