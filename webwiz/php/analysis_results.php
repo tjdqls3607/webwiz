@@ -46,13 +46,13 @@ $negative_score = round($result['document']['confidence']['negative'], 2);
 // 감정 상태 결정 함수
 function determineEmotionState($positive, $neutral, $negative) {
     if ($positive > 80) return ["매우 긍정적", "sunny.png"];
-    if ($positive > 60) return ["긍정적", "sunny.png"];
-    if ($positive > 40 && $neutral > 30) return ["약간 긍정적", "mostly_sunny.png"];
+    if ($positive > 60) return ["긍정적", "goodnignt.png"];
+    if ($positive > 40 && $neutral > 30) return ["약간 긍정적", "snow.png"];
     if ($neutral > 50) return ["중립적", "normal.png"];
-    if ($negative > 40 && $neutral > 30) return ["약간 부정적", "partly_cloudy.png"];
-    if ($negative > 60) return ["부정적", "cloudy.png"];
-    if ($negative > 80) return ["매우 부정적", "stormy.png"];
-    return ["복합적", "mixed.png"];
+    if ($negative > 40 && $neutral > 30) return ["약간 부정적", "rainy.png"];
+    if ($negative > 60) return ["부정적", "cloudrainy.png"];
+    if ($negative > 80) return ["매우 부정적", "lightning.png"];
+    return ["복합적", "normal.png"];
 }
 
 // 감정 상태 결정
@@ -121,7 +121,7 @@ $conn->close();
 <body>
 <div class="menu-top">
     <div class="menu-bar2 menu-bar-item2">
-        <a href="../php/main.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
+        <a href="feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
         <div class="menu-bar2">
             <a href="../html/diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
             <a href="#emotion_calender" class="menu-button menu-bar-item2">감정 캘린더</a>
