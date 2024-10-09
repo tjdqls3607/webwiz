@@ -6,7 +6,7 @@ $isLoggedIn = isset($_SESSION['user_id']);
 
 // 네비게이션 바 HTML 시작
 echo '<div class="menu-bar2 menu-bar-item2">';
-echo '<a href="../html/feelflow_home.html" class="menu-bar1 menu-button menu-bar-item1">FeelFlow</a>';
+echo '<a href="../php/feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1">FeelFlow</a>';
 
 echo '<div class="menu-bar2">';
 
