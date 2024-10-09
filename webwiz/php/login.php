@@ -70,7 +70,7 @@ $conn->close();
         } else {
             echo '<h1>안녕하세요, ' . $_SESSION['user_nickname'] . '님!</h1>';
             echo '<p>로그인이 완료되었습니다.</p>';
-            echo '<p><a href="../php/main.php">메인페이지로 이동하기</a></p>';
+            echo '<p><a href="../php/feelflow_home.php">메인페이지로 이동하기</a></p>';
             echo '<p><a href="../html/diary_write.html">일기 작성하러 가기</a></p>';
         }
         ?>
