@@ -27,6 +27,11 @@ if ($isLoggedIn) {
 
 echo '</div>';
 echo '</div>';
+
+// HTML 시작 전에 JavaScript 변수 설정
+echo '<script>';
+echo 'var isLoggedIn = ' . ($isLoggedIn ? 'true' : 'false') . ';';
+echo '</script>';
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -51,8 +56,18 @@ echo '</div>';
     <br>
     <h1>모든 순간을 기억하세요.<br> 감정을 담은 일기로 새로운 당신을 발견하세요.</h1>
     <p>하루의 끝에, 감정을 기록하고 더 나은 내일을 상상해보세요.<br> 오늘 당신의 기분과 하루는 어땠나요? 내일은 어떨까요?</p>
-    <button>시작하기</button>
+    <button id="startButton">시작하기</button>
 </section>
+
+<script>
+    document.getElementById('startButton').addEventListener('click', function() {
+        if (isLoggedIn) {
+            window.location.href = '../php/feel_mypage.php';
+        } else {
+            window.location.href = '../html/login.html';
+        }
+    });
+</script>
 
 <!-- 홈페이지 두번째 부분 -->
 <section class="service-overview">
