@@ -43,13 +43,6 @@ echo '</script>';
 </head>
 
 <body>
-<!-- 네비게이션바 : 머리말 부분-->
-<div class="menu-top">
-    <div class="menu-bar2 menu-bar-item2">
-        <!-- 네비게이션바 -->
-
-    </div>
-</div>
 
 <!-- 홈페이지 첫번째 부분 -->
 <section class="main-section">
