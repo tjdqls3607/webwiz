@@ -37,34 +37,38 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/ko.js"></script>
 
-<!-- Custom JavaScript -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
-    // FullCalendar 생성
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      // 달력이 월간 보기로 시작
       initialView: 'dayGridMonth',
-      // 한국어 로케일 설정, 달력이 한국어로 표시되도록 설정
       locale: 'ko',
-      // 달력의 스타일
       eventDisplay: 'list-item',
-      // 달력의 이벤트 표시 방법
       dayMaxEventRows: true,
 
-      // 하드코딩된 이벤트 추가 // 날짜별 일기의 감정분석 결과에 맞는 날씨 이모지 불러오는 기능 수정 필요!
-      events: [
-        { title: 'Event 1', start: '2024-10-01' },
-        { title: 'Event 2', start: '2024-10-05' }
-      ]
+      // AJAX를 사용하여 이벤트 불러오기
+      events: function(fetchInfo, successCallback, failureCallback) {
+        fetch('../php/get_diary_events.php')
+                .then(response => response.json())
+                .then(data => {
+                  console.log("Fetched Events:", data);  // 콘솔에 이벤트 데이터 출력
+                  successCallback(data);
+                })
+                .catch(error => {
+                  console.error("Error fetching events:", error);
+                  failureCallback(error);
+                });
+      },
+
+      eventClick: function(info) {
+        alert('제목: ' + info.event.title + '\n내용: ' + info.event.extendedProps.description);
+      }
     });
 
-    calendar.render(); // 캘린더 렌더링
+    calendar.render();
   });
 </script>
-
-
 
 </body>
 </html>
