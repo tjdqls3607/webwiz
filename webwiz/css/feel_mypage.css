@@ -3,82 +3,146 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    /*그라데이션 배경*/
     background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+    color: #333;
 }
 
-.container {
-    width: 1380px;
-    height: 300px;
-    background-color: rgb(255, 255, 255);
-    margin-top: 30px;
+/* 로고 및 네비게이션 바 */
+
+/* 메인 섹션 */
+.main-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 120px 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 1000px;
+}
+
+/* 프로필 이미지 컨테이너 */
+.profile-image-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* 변경: 중앙에서 왼쪽 정렬로 */
-    align-items: flex-start;
-    position: relative;
-}
-.my-page {
-    color: #000000;
-    font-size: 40px;
-    font-family: 'Script', cursive;
-    position: absolute;
-    top: 8%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.container-parent {
-    display: flex;
-    margin-top: 20px;
-}
-.container1, .container2 {
-    height: 300px;
-    background-color: rgb(255, 255, 255);
-}
-.container1 {
-    width: 630px;
-    margin-right: 20px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    margin-right: 50px;
 }
-.container2 {
-    width: 730px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.profile-picture-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* 변경: 왼쪽에서 중앙으로 정렬 */
-    position: relative;
-    cursor: pointer;
-    margin-top: 40px; /* 변경: 상단 마진 설정 */
-    margin-left: 15px;
-}
-.profile-icon {
-    font-size: 150px;
-    color: #555;
-    cursor: pointer;
-}
-.profile-picture {
+
+.profile-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    object-fit: cover;
+    margin-bottom: 20px;
 }
-#file-input {
-    display: none;
+
+.user-nickname, .user-comment {
+    font-size: 18px;
+    color: #333;
 }
-.nickname {
-    margin-top: 10px;
+
+/* 정보 수정 버튼 */
+.edit-info-button {
+    display: inline-block;
+    background-color: #00AE68;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.main-section h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.main-section p {
+    color: #555;
+    font-size: 20px;
+}
+
+.main-section button {
+    background-color: #00AE68;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 서비스 개요 섹션 */
+.service-overview {
+    padding: 80px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-overview img {
+    max-width: 400px;
+    border-radius: 10px;
+    margin: 0 20px;
+}
+
+.service-overview h4 {
+    color: #555;
     font-size: 24px;
-    font-weight: bold;
-    text-align: center;
 }
-.edit-info-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+
+.service-overview p {
+    font-size: 18px;
+    color: #333;
+}
+
+.service-overview h2 {
+    font-size: 17px;
+    color: #555;
+    font-weight: normal;
+}
+
+.service-overview button {
+    background-color: #00AE68;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 기능 섹션 */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.features div {
+    background-color: #ffffff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.features div img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #96cca8;
+    color: #fff;
+    font-size: 18px;
 }
