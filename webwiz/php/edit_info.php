@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: login.html");
+    header("Location: ../php/edit_info.php");
     exit();
 }
 // 폼이 제출되면 이전 페이지로 돌아가도록 설정
