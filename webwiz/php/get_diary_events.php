@@ -1,4 +1,7 @@
 <?php
+session_start();
+$user_id = $_SESSION['user_id'] ?? 0;
+
 $servername = 'localhost';
 $username = 'root';
 $password = '';
@@ -10,8 +13,11 @@ if ($conn->connect_error) {
 }
 
 // 저장된 일기 데이터를 JSON 형식으로 가져오기
-$sql = "SELECT created_at, content, emotion_state FROM diaries";
-$result = $conn->query($sql);
+$sql = "SELECT title, created_at, content FROM diaries WHERE user_id = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
 
 $events = [];
 while ($row = $result->fetch_assoc()) {
