@@ -39,12 +39,13 @@ $profile_picture = isset($_SESSION['profile_picture']) ? $_SESSION['profile_pict
     <div class="profile-image-container">
         <input id="file-input" type="file" accept="image/*" onchange="uploadProfilePicture(event)">
         <label for="file-input" class="profile-image-label" title="프로필 사진 변경">
-            <img class="profile-image" id="profile-img" src="webwiz/webwiz/imgsrc/<?php echo $profile_picture; ?>">
+            <img class="profile-image" id="profile-img" src="../imgsrc/noprofile.png"<?php echo $profile_picture; ?>>
         </label>
         <div class="user-nickname">닉네임: <?php echo $_SESSION['user_nickname']; ?></div>
         <div class="user-comment">한마디: <?php echo isset($_SESSION['user_comment']) ? $_SESSION['user_comment'] : ''; ?></div>
     </div>
-    <a href="../php/edit_info.php" class="edit-info-button">내 정보 수정하기</a>
+
+    <a href="../php/edit_info.php" class="main-section edit-info-button">내 정보 수정하기</a>
 </section>
 
 <!-- 추가 컨테이너 -->
