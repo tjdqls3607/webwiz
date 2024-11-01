@@ -11,14 +11,29 @@ body {
 
 /* 메인 섹션 */
 .main-section {
+    position: relative; /* 컨테이너 내 요소 위치 지정 */
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 120px 20px;
     background-color: #FFF;
     border-radius: 10px;
-    margin: 30px auto;
+    margin: 20px auto;
     max-width: 1000px;
+}
+
+/* 정보 수정 버튼 */
+.edit-info-button {
+    position: absolute;
+    top: 3px;  /* 상단에 위치 */
+    right: 20px; /* 오른쪽에 위치 */
+    background-color: #00AE68;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* 프로필 이미지 컨테이너 */
@@ -40,20 +55,6 @@ body {
     font-size: 18px;
     color: #333;
 }
-
-/* 정보 수정 버튼 */
-.edit-info-button {
-    display: inline-block;
-    background-color: #00AE68;
-    color: white;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 
 .main-section h1 {
     font-size: 36px;
