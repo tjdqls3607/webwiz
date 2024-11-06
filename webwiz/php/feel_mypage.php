@@ -19,7 +19,7 @@ echo '</div>';
 echo '</div>';
 
 // 세션에서 프로필 사진이 있는 경우 가져오기
-$profile_picture = isset($_SESSION['profile_picture']) ? $_SESSION['profile_picture'] : 'noprofile.png';
+$profile_image = isset($_SESSION['profile_image']) ? $_SESSION['profile_image'] : 'noprofile.png';
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -39,7 +39,7 @@ $profile_picture = isset($_SESSION['profile_picture']) ? $_SESSION['profile_pict
     <div class="profile-image-container">
         <input id="file-input" type="file" accept="image/*" onchange="uploadProfilePicture(event)">
         <label for="file-input" class="profile-image-label" title="프로필 사진 변경">
-            <img class="profile-image" id="profile-img" src="../imgsrc/noprofile.png"<?php echo $profile_picture; ?>>
+            <img class="profile-image" id="profile-img" src="display_image.php"<?php echo $profile_image; ?>>
         </label>
         <div class="user-nickname">닉네임: <?php echo $_SESSION['user_nickname']; ?></div>
         <div class="user-comment">한마디: <?php echo isset($_SESSION['user_comment']) ? $_SESSION['user_comment'] : ''; ?></div>
@@ -59,20 +59,21 @@ $profile_picture = isset($_SESSION['profile_picture']) ? $_SESSION['profile_pict
     // 프로필 사진 업로드 함수
     function uploadProfilePicture(event) {
         var input = event.target;
-        var reader = new FileReader();
-        reader.onload = function () {
-            var image = document.getElementById('profile-img');
-            image.src = reader.result;
+
+        if (input.files && input.files[0]) {
+            var formData = new FormData();
+            formData.append('profile_image', input.files[0]); // 선택한 파일 추가
 
             // 서버에 프로필 사진 업로드
             var xhr = new XMLHttpRequest();
             xhr.open('POST', 'upload_profile_picture.php', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onload = function () {
                 if (xhr.status === 200) {
                     var response = JSON.parse(xhr.responseText);
                     if (response.status === 'success') {
                         alert('프로필 사진이 변경되었습니다.');
+                        document.getElementById('profile-img').src = 'display_image.php?timestamp=' + new Date().getTime();
+                        // 서버에서 반환된 이미지 경로로 업데이트
                     } else {
                         alert('프로필 사진 변경 실패: ' + response.message);
                     }
@@ -80,10 +81,10 @@ $profile_picture = isset($_SESSION['profile_picture']) ? $_SESSION['profile_pict
                     alert('서버 오류: ' + xhr.status);
                 }
             };
-            xhr.send('profile_picture=' + encodeURIComponent(reader.result));
-        };
-        reader.readAsDataURL(input.files[0]);
+            xhr.send(formData); // FormData 객체 전송
+        }
     }
+
 
     // 정보 수정 모달 열기
     function openEditInfoModal() {
