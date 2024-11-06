@@ -20,7 +20,7 @@ body {
 /* FullCalendar 기본 레이아웃 조정 */
 .fc-theme-standard {
     position: relative;
-    width: 95%;
+    width: 96%;
     margin-left: 15px;
     background-color: white;
 }
@@ -32,11 +32,11 @@ body {
     left: 250px;    
 }
 
-/* 이전, 다음 버튼 */
+/* 이전, 이후 버튼 */
 .fc-prev-button.fc-button.fc-button-primary,
 .fc-next-button.fc-button.fc-button-primary {
     display: flex;
-    background-color: #00AE68;
+    background-color: #96cca8;
     top: 10px;
     border: 0;
     outline: 0;
@@ -49,10 +49,11 @@ body {
 .fc-next-button.fc-button-primary {
     right: 150px;
 }
-  
+
+/* 이전, 이후 버튼 클릭시 */
 .fc-prev-button.fc-button-primary:active,
 .fc-next-button.fc-button-primary:active {
-    background-color: #00AE68;
+    background-color: #96cca8;
   }
   
 /* 오늘 버튼 */
@@ -61,7 +62,7 @@ body {
     top: 10px;
     right: 10px;
     z-index: 100;
-    background-image: url("heart_833459.png"); /* 이미지 경로 */
+    background-image: url("today_image.png"); /* 이미지 경로 */
     background-size: cover; /* 버튼 크기에 맞게 이미지 확대 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */
     background-color: transparent; /* 배경색 제거 */
@@ -71,9 +72,9 @@ body {
     text-indent: -9999px; /* 버튼 텍스트 숨기기 */
 }
 
-/* 버튼 클릭 시 */
+/* 오늘 버튼 클릭 시 */
 .fc-today-button.fc-button-primary:active {
-    background-image: url("heart_833459.png"); /* 클릭 시 변경될 이미지 */
+    background-image: url("today_image.png"); /* 클릭 시 변경될 이미지 */
     background-size: cover;
 }
   
@@ -94,11 +95,6 @@ body {
   
 .fc-col-header {
     border-bottom: 1.5px solid rgb(27, 0, 0);
-}
-  
-/* 테이블 기본 스타일 초기화 */
-.fc th, .fc td {
-    vertical-align: middle;
 }
   
 .fc-theme-standard th, .fc-theme-standard td {
