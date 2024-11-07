@@ -1,74 +1,97 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/menu_bar.css">
-  <link rel="stylesheet" href="../css/emotion_calendar.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="menu_bar.css">
+    <link rel="stylesheet" href="emotion_calendar.css">
 
-  <!-- FullCalendar의 CSS 파일 불러오기, cdn.jsdelivr.net 경로 -->
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
+    <!-- FullCalendar의 CSS 파일 불러오기, cdn.jsdelivr.net 경로 -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
 </head>
 
 <body>
-<!-- 네비게이션바 : 머리말 부분-->
-<div class="menu-top">
-  <div class="menu-bar2 menu-bar-item2">
-    <a href="../php/feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
-    <!-- 네비게이션바 -->
-    <div class="menu-bar2">
-      <a href="diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
-      <a href="emotion_calendar.html" class="menu-button menu-bar-item2">감정 캘린더</a>
-      <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
-      <a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>
-      <a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>
-      <!--마이메이지, 사용자 이미지로 변경하기-->
-      <a href="../php/feel_mypage.php" class="menu-button menu-bar2 menu-bar-item2">마이페이지</a>
+    <!-- 네비게이션바 : 머리말 부분-->
+    <div class="menu-top">
+        <div class="menu-bar2 menu-bar-item2">
+            <a href="feelflow_home.html" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
+            <!-- 네비게이션바 -->
+            <div class="menu-bar2">
+                <a href="diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
+                <a href="emotion_calendar.html" class="menu-button menu-bar-item2">감정 캘린더</a>
+                <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
+                <a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>
+                <a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>
+                <!--마이메이지, 사용자 이미지로 변경하기-->
+                <a href="feel_mypage.php" class="menu-button menu-bar2 menu-bar-item2">마이페이지</a>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+    
+    <!-- FullCalendar 자바스크립트 라이브러리, 달력을 구현 -->
+    <!-- CDN으로 FullCalendar를 불러오고 있기 때문에 별도의 설치가 필요하지 않다, cdn.jsdelivr.net 경로 -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/ko.js"></script> 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+    
+          // FullCalendar 생성
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+            locale: 'ko', // 로케일 설정, 달력에 표시될 언어 설정
+            initialView: 'dayGridMonth', // 달력이 월간 보기로 시작
+            eventDisplay: 'list-item', // 달력의 스타일
+            dayMaxEventRows: true, // 달력의 이벤트 표시 방법 // 이벤트가 많은 경우 줄 수 제한
 
-<div class="calendar-box">
-  <div id="calendar"></div>
-</div>
+            // 하드코딩된 이벤트 추가 // 날짜별 일기의 감정분석 결과에 맞는 날씨 이모지 불러오는 기능 수정 필요!
+            events: [
+              { title: 'Event 1', start: '2024-11-01' },
+              { title: 'Event 2', start: '2024-11-05' }
+            ]
+          });
+    
+          calendar.render(); // 캘린더 렌더링
+        });
+      </script> 
 
-<!-- FullCalendar 자바스크립트 라이브러리, 달력을 구현 -->
-<!-- CDN으로 FullCalendar를 불러오고 있기 때문에 별도의 설치가 필요하지 않다, cdn.jsdelivr.net 경로 -->
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/ko.js"></script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      locale: 'ko',
-      eventDisplay: 'list-item',
-      dayMaxEventRows: true,
-
-      // AJAX를 사용하여 이벤트 불러오기
-      events: function(fetchInfo, successCallback, failureCallback) {
-        fetch('../php/get_diary_events.php')
-                .then(response => response.json())
-                .then(data => {
-                  console.log("Fetched Events:", data);  // 콘솔에 이벤트 데이터 출력
-                  successCallback(data);
-                })
-                .catch(error => {
-                  console.error("Error fetching events:", error);
-                  failureCallback(error);
-                });
-      },
-
-      eventClick: function(info) {
-        alert('제목: ' + info.event.title + '\n내용: ' + info.event.extendedProps.description);
-      }
-    });
-
-    calendar.render();
-  });
-</script>
-
+      <div class="content">
+        <!-- 왼쪽: 감정 캘린더 -->
+        <div class="calendar-box">
+            <div id="calendar"></div>
+        </div>
+        <!-- 오른쪽: 감정 이모지 설명 -->
+        <div class="right-section">
+            <div class="chart-section">
+                <h2>감정 캘린더 날씨 이모지</h2>
+                <div class="chart" id="overall-trend">
+                  <div class="emotion-set">
+                    <img src="sunny.png" alt="이모지">
+                    <h1>sunny: 감정상태 설명 ... </h1>
+                  </div>
+                  <div class="emotion-set">
+                    <img src="rainy.png" alt="이모지">
+                    <h1>rainy: 감정상태 설명 ... </h1>
+                  </div>
+                  <div class="emotion-set">
+                    <img src="normal.png" alt="이모지">
+                    <h1>normal: 감정상태 설명 ... </h1>
+                  </div>
+                  <div class="emotion-set">
+                    <img src="lightning.png" alt="이모지">
+                    <h1>lightning: 감정상태 설명 ... </h1>
+                  </div>
+                  <div class="emotion-set">
+                    <img src="cloudrainy.png" alt="이모지">
+                    <h1>cloudrainy: 감정상태 설명 ... </h1>
+                  </div>
+                  <div class="emotion-set">
+                    <img src="snow.png" alt="이모지">
+                    <h1>snow: 감정상태 설명 ... </h1>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
 </body>
 </html>
