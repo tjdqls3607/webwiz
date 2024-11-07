@@ -52,193 +52,72 @@ $emotionColors = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>감정 캘린더</title>
     <link rel="stylesheet" href="../css/menu_bar.css">
-    <style>
-        .calendar-box {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    <link rel="stylesheet" href="../css/emotion_calendar.css">
 
-        #calendar {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        #calendar th {
-            background: #f5f5f5;
-            padding: 10px;
-            text-align: center;
-        }
-
-        #calendar td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            height: 100px;
-            vertical-align: top;
-        }
-
-        .diary-entry {
-            margin-top: 5px;
-            padding: 5px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .diary-entry:hover {
-            background-color: rgba(0,0,0,0.05);
-        }
-
-        .emotion-dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
-
-        /* 모달 스타일 */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-
-        .modal-content {
-            position: relative;
-            background-color: white;
-            margin: 15% auto;
-            padding: 20px;
-            width: 70%;
-            max-width: 700px;
-            border-radius: 10px;
-        }
-
-        .close {
-            position: absolute;
-            right: 20px;
-            top: 10px;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        .date-number {
-            font-size: 1.2em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-    </style>
-    <script>
-        function showDiaryEntry(id) {
-            // AJAX로 일기 내용 가져오기
-            fetch(`get_diary.php?id=${id}`)
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById('diaryTitle').textContent = data.title;
-                    document.getElementById('diaryContent').textContent = data.content;
-                    document.getElementById('diaryEmotion').textContent = data.emotion_state;
-                    document.getElementById('diaryModal').style.display = 'block';
-                });
-        }
-
-        function closeModal() {
-            document.getElementById('diaryModal').style.display = 'none';
-        }
-
-        // 캘린더 생성 함수
-        function generateCalendar(year, month) {
-            const firstDay = new Date(year, month - 1, 1);
-            const lastDay = new Date(year, month, 0);
-            const daysInMonth = lastDay.getDate();
-            const startingDay = firstDay.getDay();
-
-            let calendarHtml = `
-                <table id="calendar">
-                    <tr>
-                        <th>일</th><th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
-                    </tr>
-                    <tr>`;
-
-            // 첫 주의 빈 칸
-            for (let i = 0; i < startingDay; i++) {
-                calendarHtml += '<td></td>';
-            }
-
-            // 달력 채우기
-            let currentDay = 1;
-            while (currentDay <= daysInMonth) {
-                if ((startingDay + currentDay - 1) % 7 === 0) {
-                    calendarHtml += '</tr><tr>';
-                }
-
-                const currentDate = `${year}-${String(month).padStart(2, '0')}-${String(currentDay).padStart(2, '0')}`;
-                calendarHtml += `<td>
-                    <div class="date-number">${currentDay}</div>`;
-
-                if (typeof diaryEntries !== 'undefined' && diaryEntries[currentDate]) {
-                    const entry = diaryEntries[currentDate];
-                    const emotionColor = emotionColors[entry.emotion_state] || '#9E9E9E';
-                    calendarHtml += `
-                        <div class="diary-entry" onclick="showDiaryEntry(${entry.id})">
-                            <span class="emotion-dot" style="background-color: ${emotionColor}"></span>
-                            ${entry.title}
-                        </div>`;
-                }
-
-                calendarHtml += '</td>';
-                currentDay++;
-            }
-
-            calendarHtml += '</tr></table>';
-            document.getElementById('calendar').innerHTML = calendarHtml;
-        }
-
-        // 페이지 로드 시 현재 월의 캘린더 생성
-        window.onload = function() {
-            const today = new Date();
-            generateCalendar(today.getFullYear(), today.getMonth() + 1);
-        }
-    </script>
+    <!-- FullCalendar의 CSS 파일 불러오기, cdn.jsdelivr.net 경로 -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
 </head>
+
 <body>
+<!-- 네비게이션바 : 머리말 부분-->
 <div class="menu-top">
     <div class="menu-bar2 menu-bar-item2">
-        <a href="feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
+        <a href="../php/feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
+        <!-- 네비게이션바 -->
         <div class="menu-bar2">
-            <a href="../html/diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
-            <a href="emotion_calender.php" class="menu-button menu-bar-item2">감정 캘린더</a>
+            <a href="diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
+            <a href="emotion_calendar.html" class="menu-button menu-bar-item2">감정 캘린더</a>
             <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
-            <a href="content_recommend.html" class="menu-button menu-bar-item2">콘텐츠 추천</a>
-            <a href="chatroom.css" class="menu-button menu-bar-item2">사용자 매칭</a>
-            <a href="feel_mypage.php" class="menu-button menu-bar2 menu-bar-item2">마이페이지</a>
+            <a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>
+            <a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>
+            <!--마이메이지, 사용자 이미지로 변경하기-->
+            <a href="../php/feel_mypage.php" class="menu-button menu-bar2 menu-bar-item2">마이페이지</a>
         </div>
     </div>
 </div>
 
 <div class="calendar-box">
-    <div id="calendar">
-        <!-- 캘린더가 여기에 생성됩니다 -->
-    </div>
+    <div id="calendar"></div>
 </div>
 
-<!-- 일기 내용을 보여주는 모달 -->
-<div id="diaryModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2 id="diaryTitle"></h2>
-        <p><strong>감정 상태:</strong> <span id="diaryEmotion"></span></p>
-        <p id="diaryContent"></p>
-    </div>
-</div>
+<!-- FullCalendar 자바스크립트 라이브러리, 달력을 구현 -->
+<!-- CDN으로 FullCalendar를 불러오고 있기 때문에 별도의 설치가 필요하지 않다, cdn.jsdelivr.net 경로 -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/ko.js"></script>
+
+<!-- Custom JavaScript -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'ko',
+            eventDisplay: 'list-item',
+            dayMaxEventRows: true,
+
+            // AJAX를 사용하여 이벤트 불러오기
+            events: function(fetchInfo, successCallback, failureCallback) {
+                fetch('../php/get_diary_events.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log("Fetched Events:", data);  // 콘솔에 이벤트 데이터 출력
+                        successCallback(data);
+                    })
+                    .catch(error => {
+                        console.error("Error fetching events:", error);
+                        failureCallback(error);
+                    });
+            },
+
+            eventClick: function(info) {
+                alert('제목: ' + info.event.title + '\n내용: ' + info.event.extendedProps.description);
+            }
+        });
+
+        calendar.render();
+    });
+</script>
 </body>
 </html>
