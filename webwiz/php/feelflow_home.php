@@ -15,7 +15,7 @@ if ($isLoggedIn) {
     echo '<a href="../php/feel_mypage.php" class="welcome-message menu-button menu-bar-item2">' . htmlspecialchars($_SESSION['user_nickname']) . '님 환영합니다.</a>';
     echo '<a href="../php/logout.php" class="menu-button menu-bar-item2">로그아웃</a>';
     echo '<a href="../html/diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>';
-    echo '<a href="../html/emotion_calender.html" class="menu-button menu-bar-item2">감정 캘린더</a>';
+    echo '<a href="../php/emotion_calender.php" class="menu-button menu-bar-item2">감정 캘린더</a>';
     echo '<a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>';
     echo '<a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>';
     echo '<a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>';
