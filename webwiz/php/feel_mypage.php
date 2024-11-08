@@ -11,7 +11,7 @@ echo '<a href="../php/feelflow_home.php" class="menu-bar1 menu-button menu-bar-i
 echo '<div class="menu-bar2">';
 echo '<a href="../php/logout.php" class="menu-button menu-bar-item2">로그아웃</a>';
 echo '<a href="../html/diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>';
-echo '<a href="../html/emotion_calender.html" class="menu-button menu-bar-item2">감정 캘린더</a>';
+echo '<a href="../php/emotion_calender.php" class="menu-button menu-bar-item2">감정 캘린더</a>';
 echo '<a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>';
 echo '<a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>';
 echo '<a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>';
