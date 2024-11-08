@@ -59,7 +59,7 @@
 
                 // 일기를 FullCalendar 형식으로 출력
                 while ($row = $result->fetch_assoc()) {
-                    echo "{ title: '" . htmlspecialchars($row['title']) . "', start: '" . $row['created_at'] . "', url: '../php/view_diary.php?entry_id=" . $row['id'] . "' },";
+                    echo "{ title: '" . htmlspecialchars($row['title']) . "', start: '" . $row['created_at'] . "', url: '../php/view_diary.php?diaries_id=" . $row['id'] . "' },";
                 }
 
                 $stmt->close();
@@ -93,27 +93,27 @@
             <div class="chart" id="overall-trend">
                 <div class="emotion-set">
                     <img src="../imgsrc/sunny.png" alt="이모지">
-                    <h1>sunny: 감정상태 설명 ... </h1>
+                    <h1>sunny: 감정 긍정 점수 60점 이상 </h1>
                 </div>
                 <div class="emotion-set">
                     <img src="../imgsrc/rainy.png" alt="이모지">
-                    <h1>rainy: 감정상태 설명 ... </h1>
+                    <h1>rainy: 감정 부정 점수 40점 이상 </h1>
                 </div>
                 <div class="emotion-set">
                     <img src="../imgsrc/normal.png" alt="이모지">
-                    <h1>normal: 감정상태 설명 ... </h1>
+                    <h1>normal: 감정 중립 점수 50점 이상 </h1>
                 </div>
                 <div class="emotion-set">
                     <img src="../imgsrc/lightning.png" alt="이모지">
-                    <h1>lightning: 감정상태 설명 ... </h1>
+                    <h1>lightning: 감정 부정 점수 80점 이상 </h1>
                 </div>
                 <div class="emotion-set">
                     <img src="../imgsrc/cloudrainy.png" alt="이모지">
-                    <h1>cloudrainy: 감정상태 설명 ... </h1>
+                    <h1>cloudrainy: 감정 부정 점수 60점 이상 80점 미만 </h1>
                 </div>
                 <div class="emotion-set">
                     <img src="../imgsrc/snow.png" alt="이모지">
-                    <h1>snow: 감정상태 설명 ... </h1>
+                    <h1>snow: 감정 긍정 점수 40점 이상, 감정 중립 점수 30점 이상 </h1>
                 </div>
             </div>
         </div>
