@@ -134,7 +134,7 @@ try {
         <a href="feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
         <div class="menu-bar2">
             <a href="../html/diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
-            <a href="../html/emotion_calender.html" class="menu-button menu-bar-item2">감정 캘린더</a>
+            <a href="../php/emotion_calender.php" class="menu-button menu-bar-item2">감정 캘린더</a>
             <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
             <a href="content_recommend.html" class="menu-button menu-bar-item2">콘텐츠 추천</a>
             <a href="chatroom.css" class="menu-button menu-bar-item2">사용자 매칭</a>
