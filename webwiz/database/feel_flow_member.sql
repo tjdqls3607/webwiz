@@ -11,3 +11,6 @@ CREATE TABLE `users` (
  UNIQUE KEY `username` (`username`),
  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_c
+
+
+ALTER TABLE `users` ADD `comment` VARCHAR(255) NULL DEFAULT NULL AFTER `profile_image`;
