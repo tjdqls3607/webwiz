@@ -29,7 +29,7 @@ body {
 
 /* 오른쪽: 감정 캘린더 - 감정 이모지 설명 */
 .right-section {
-    width: 45%; 
+    width: 45%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -75,7 +75,7 @@ body {
     height: 500px; /* 차트 세로 길이 */
     background-color: #E3EFD5; /* 차트 배경 색 */
     border-radius: 10px;
-}    
+}
 
 /* FullCalendar 기본 레이아웃 조정 */
 .fc-theme-standard {
@@ -83,12 +83,12 @@ body {
     width: 95%;
     margin-left: 15px;
 }
-  
+
 /* 월 타이틀 폰트 및 위치 조정 */
 .fc .fc-toolbar-title {
     position: center;
     top: 10px;
-    left: 250px;    
+    left: 250px;
 }
 
 /* 이전, 이후 버튼 */
@@ -100,7 +100,7 @@ body {
     border: 0;
     outline: 0;
 }
-  
+
 .fc-prev-button.fc-button-primary {
     right: 140px;
 }
@@ -108,20 +108,20 @@ body {
 .fc-next-button.fc-button-primary {
     right: 100px;
 }
-  
+
 /* 이전, 이후 버튼 클릭시 */
 .fc-prev-button.fc-button-primary:active,
 .fc-next-button.fc-button-primary:active {
     background-color: #96cca8;
-  }
-  
+}
+
 /* 오늘 버튼 */
 .fc-today-button.fc-button.fc-button-primary {
     position: absolute;
     top: 10px;
     right: 10px;
     z-index: 100;
-    background-image: url("today_image.png"); /* 이미지 경로 */
+    background-image: url("../imgsrc/today_image.png"); /* 이미지 경로 */
     background-size: cover; /* 버튼 크기에 맞게 이미지 확대 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */
     background-color: transparent; /* 배경색 제거 */
@@ -133,7 +133,7 @@ body {
 
 /* 오늘 버튼 클릭 시 */
 .fc-today-button.fc-button-primary:active {
-    background-image: url("today_image.png"); /* 클릭 시 변경될 이미지 */
+    background-image: url("../imgsrc/today_image.png"); /* 클릭 시 변경될 이미지 */
     background-size: cover;
 }
 
@@ -143,35 +143,35 @@ body {
     font-weight: 400;
     margin-left: 10px;
 }
-  
+
 .fc-day-sun {
     color: red;
 }
-  
+
 .fc-day-sat {
     color: blue;
 }
-  
+
 .fc-theme-standard th, .fc-theme-standard td {
     border: 0;
 }
-  
+
 /* dayGrid 높이 및 레이아웃 조정 */
-  .fc .fc-daygrid-day-frame {
+.fc .fc-daygrid-day-frame {
     height: 85px;
     overflow: hidden;
     margin: auto;
 }
-  
+
 .fc .fc-daygrid-day-top {
     display: block;
 }
-  
+
 .fc-daygrid-dot-event:hover,
 .fc-daygrid-dot-event.fc-event-mirror {
     background: none;
 }
-  
+
 .fc-daygrid-event-dot {
     display: flex;
     position: relative;
@@ -180,22 +180,22 @@ body {
     border-radius: 50px;
     left: 30px;
 }
-  
+
 /* 시간 및 이벤트 제목 숨김 */
 .fc-event-time,
 .fc-event-title {
     display: none;
 }
-  
+
 /* FullCalendar에서 스크롤을 완전히 제거 */
 .fc-scroller, .fc-scroller-liquid {
     overflow: hidden !important; /* 스크롤을 없애기 위해 오버플로우 숨기기 */
 }
-  
+
 .fc .fc-daygrid-day-frame {
     height: auto !important; /* 각 셀의 높이를 자동으로 설정 */
 }
-  
+
 .fc .fc-daygrid-day {
     height: auto !important; /* 각 날짜 셀의 높이를 자동으로 설정 */
 }
