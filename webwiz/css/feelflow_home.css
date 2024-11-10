@@ -39,6 +39,8 @@ body {
 .service-overview {
     padding: 120px 200px;
     display: flex;
+    align-items: center; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
     gap: 20px;
 }
 
