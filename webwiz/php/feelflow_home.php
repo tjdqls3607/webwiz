@@ -65,7 +65,7 @@ echo '</script>';
 <!-- 홈페이지 두번째 부분 -->
 <section class="service-overview">
     <div>
-        <img src="https://via.placeholder.com/400" alt="서비스 이미지">
+        <img src="../imgsrc/400x400.gif" alt="서비스 이미지">
     </div>
     <div>
         <h4>FeelFlow 소개</h4>
@@ -78,7 +78,7 @@ echo '</script>';
 <!-- 홈페이지 세번째 부분 -->
 <section class="features">
     <div>
-        <img src="https://via.placeholder.com/100" alt="Feature 1">
+        <img src="../imgsrc/100x100(1).png" alt="Feature 1">
         <p>사용자의 감정을 일기예보처럼 기록하고 분석해, 각 날짜에 해당하는 감정을 날씨 이모지로 시각화 합니다. 자신의 감정 변화를 한 눈에 파악해보세요.</p>
     </div>
     <div>
