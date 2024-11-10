@@ -39,6 +39,7 @@ body {
 .service-overview {
     padding: 120px 200px;
     display: flex;
+    gap: 20px;
 }
 
 .service-overview img {
@@ -98,7 +99,8 @@ body {
 }
 
 .features div img {
-    width: 150px;
+    width: 250px; 
+    height: 150px;
     margin-bottom: 20px;
 }
 
