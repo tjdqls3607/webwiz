@@ -3,8 +3,8 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    /*그라데이션 배경*/
-    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+    font-family: Arial, sans-serif; /* 텍스트의 글씨체 지정 */
+    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB); /*그라데이션 배경*/
 }
 
 /* 전체 콘텐츠 레이아웃 */
