@@ -65,7 +65,7 @@ echo '</script>';
 <!-- 홈페이지 두번째 부분 -->
 <section class="service-overview">
     <div>
-        <img src="../imgsrc/400x400.gif" alt="서비스 이미지">
+        <img src="../imgsrc/400x400(1).gif" alt="서비스 이미지">
     </div>
     <div>
         <h4>FeelFlow 소개</h4>
