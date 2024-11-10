@@ -28,7 +28,8 @@
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    color: #123b1b; /* 텍스트 색상 설정 */
+    color: #123b1b; /* 텍스트의 색상 설정 */
+    font-family: Arial, sans-serif; /* 텍스트의 글씨체 지정 */
     font-size: 30px; /* 텍스트의 글씨 크기 설정 */
     display: inline-block; /* 요소들이 한 줄에 분할되도록 함 */
     text-decoration: none; /* 밑줄 제거 */
@@ -39,7 +40,8 @@
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    color: #123b1b; /* 텍스트 색상 설정 */
+    color: #123b1b; /* 텍스트의 색상 설정 */
+    font-family: Arial, sans-serif; /* 텍스트의 글씨체 지정 */
     font-size: 15px; /* 텍스트의 글씨 크기 설정 */
     text-decoration: none; /* 밑줄 제거 */
 }
