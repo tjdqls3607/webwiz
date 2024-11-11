@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="menu_bar.css">
@@ -8,9 +8,9 @@
 
     <!-- FullCalendar의 CSS 파일 불러오기, cdn.jsdelivr.net 경로 -->
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css" rel="stylesheet">
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- 네비게이션바 : 머리말 부분-->
     <div class="menu-top">
         <div class="menu-bar2 menu-bar-item2">
@@ -20,7 +20,7 @@
                 <a href="diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
                 <a href="emotion_calendar.html" class="menu-button menu-bar-item2">감정 캘린더</a>
                 <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
-                <a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>
+                <a href="content_recommend.html" class="menu-button menu-bar-item2">콘텐츠 추천</a>
                 <a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>
                 <!--마이메이지, 사용자 이미지로 변경하기-->
                 <a href="feel_mypage.php" class="menu-button menu-bar2 menu-bar-item2">마이페이지</a>
@@ -32,6 +32,7 @@
     <!-- CDN으로 FullCalendar를 불러오고 있기 때문에 별도의 설치가 필요하지 않다, cdn.jsdelivr.net 경로 -->
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales/ko.js"></script> 
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
           var calendarEl = document.getElementById('calendar');
@@ -52,46 +53,53 @@
     
           calendar.render(); // 캘린더 렌더링
         });
-      </script> 
+    </script> 
 
-
-      <div class="content">
-        <!-- 왼쪽: 감정 캘린더 -->
-        <div class="calendar-box">
-            <div id="calendar"></div>
-        </div>
-        <!-- 오른쪽: 감정 이모지 설명 -->
-        <div class="right-section">
-            <div class="chart-section">
-                <h2>감정 캘린더 날씨 이모지</h2>
-                <div class="chart" id="overall-trend">
-                  <div class="emotion-set">
-                    <img src="sunny.png" alt="이모지">
-                    <h1>sunny: 감정상태 설명 ... </h1>
-                  </div>
-                  <div class="emotion-set">
-                    <img src="rainy.png" alt="이모지">
-                    <h1>rainy: 감정상태 설명 ... </h1>
-                  </div>
-                  <div class="emotion-set">
-                    <img src="normal.png" alt="이모지">
-                    <h1>normal: 감정상태 설명 ... </h1>
-                  </div>
-                  <div class="emotion-set">
-                    <img src="lightning.png" alt="이모지">
-                    <h1>lightning: 감정상태 설명 ... </h1>
-                  </div>
-                  <div class="emotion-set">
-                    <img src="cloudrainy.png" alt="이모지">
-                    <h1>cloudrainy: 감정상태 설명 ... </h1>
-                  </div>
-                  <div class="emotion-set">
-                    <img src="snow.png" alt="이모지">
-                    <h1>snow: 감정상태 설명 ... </h1>
-                  </div>
-                </div>
-            </div>
+    <div class="content">
+      <!-- 왼쪽: 감정 캘린더 -->
+      <div class="calendar-box">
+          <div id="calendar"></div>
+      </div>
+      <!-- 오른쪽: 감정 이모지 설명 -->
+      <div class="right-section">        
+        <div class="chart-section">              
+          <table class="emotion-table">                
+            <tbody>        
+              <tr>        
+                <td><img src="sunny.png" alt="이모지"></td>        
+                <td>sunny</td>        
+                <td>감정 긍정 점수 60점 이상</td>        
+              </tr>        
+              <tr>        
+                <td><img src="rainy.png" alt="이모지"></td>        
+                <td>rainy</td>        
+                <td>감정 부정 점수 40점 이상</td>        
+              </tr>        
+              <tr>                          
+                <td><img src="normal.png" alt="이모지"></td>        
+                <td>normal</td>        
+                <td>감정 중립 점수 50점 이상</td>        
+              </tr>        
+              <tr>        
+                <td><img src="lightning.png" alt="이모지"></td>        
+                <td>lightning</td>        
+                <td>감정 부정 점수 80점 이상</td>        
+              </tr>        
+              <tr>        
+                <td><img src="cloudrainy.png" alt="이모지"></td>        
+                <td>cloudrainy</td>        
+                <td>감정 부정 점수 60점 이상 80점 미만</td>        
+              </tr>        
+              <tr>        
+                <td><img src="snow.png" alt="이모지"></td>        
+                <td>snow</td>        
+                <td>감정 긍정 점수 40점 이상, 감정 중립 점수 30점 이상</td>        
+              </tr>        
+            </tbody>        
+          </table>        
         </div>
       </div>
-</body>
+    </div>        
+  
+  </body>
 </html>
