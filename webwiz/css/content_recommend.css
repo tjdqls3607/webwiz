@@ -1,0 +1,392 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, sans-serif; /* 텍스트의 글씨체 지정 */
+    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB); /*그라데이션 배경*/
+}
+
+/* 오늘의 감정분석 결과 및 전체 이용자 감정 정보 */
+.red-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5fa37a;
+    padding: 20px;
+    margin-top: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 0.75rem;
+}
+
+.red-section .left-content {
+    display: flex;
+    align-items: center;
+}
+
+.weather-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.today-emotion {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.red-section .right-content {
+    text-align: right;
+}
+
+.red-section .right-content h5 {
+    font-size: 13px;
+    color: #000000; 
+}
+
+.red-section .right-content h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000; 
+    margin: 5px 0 0;
+}
+
+/* 감정별 콘텐츠 통계 및 추천 콘텐츠 정보 */
+.content {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.left-section, .right-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    gap: 10px;
+}
+
+/* 왼쪽 섹션 내용 */
+.chart-section {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 300px;
+    display: flex;
+    flex-direction: row; /* 가로 정렬 */
+    justify-content: space-between; /* 차트 간 간격 */
+    background-color: #F1F6E8; /* 연한 초록색 배경 */
+    border: 3px solid #A2C089; /* 테두리 색상 */
+}
+
+/* 오른쪽 섹션 내용 */
+.top-content {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #A2C089; 
+    background-color: #F1F6E8; 
+    height: 300px;
+    position: relative; /* 버튼 위치 설정을 위해 사용 */
+    justify-content: space-between; /* 요소 간의 공간 분할 */
+}
+
+.top-content h2 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.content-display {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수직 중앙 정렬 */
+    text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    width: 100%; /* 전체 너비 */
+    justify-content: space-between; /* 양쪽 공간 균등 배치 */
+    gap: 30px; /* 음악 콘텐츠와 영화 콘텐츠 사이 간격 */
+}
+
+.song-info, .movie-info {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center;
+    gap: 10px; /* 이미지와 텍스트 사이 간격 */
+    flex: 1; /* 반반 차지 */
+}
+
+.song-info img, .movie-info img {
+    width: 120px;
+    height: 120px;
+}
+
+.song-details p, .movie-details p {
+    margin: 0;
+    font-size: 12px;
+    text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+.song-details strong, .movie-details strong {
+    font-size: 16px;
+    text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+/* 화살표 버튼 스타일 */
+.arrow-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* 수직 가운데 정렬 */
+    transform: translateY(-50%); /* 수직 중앙에 맞추기 */
+    padding: 5px; /* 클릭 영역 확장 */
+    transition: all 0.3s ease; /* 호버 시 부드러운 전환 */
+}
+
+.arrow-btn.left {
+    left: 10px; 
+}
+
+.arrow-btn.right {
+    right: 10px;
+}
+
+.arrow-btn:hover {
+    border: 1px solid black; /* 얇은 검은색 테두리 */
+    border-radius: 10px; 
+    background-color: none;
+}
+
+/* 콘텐츠 종류 선택 및 서치의 레이아웃 */
+.content-recommendation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 40px;
+}
+
+.left-content2 {
+    display: flex;
+    align-items: center;
+}
+
+.right-content2 {
+    display: flex;
+    align-items: center;
+}
+
+/* 버튼 디자인 */
+.btn-two {
+    margin: 10px;
+}
+
+.btn-two.green {
+    background-color: #b5d89d;
+}
+
+.rounded {
+    border-radius: 10px;
+}
+
+.btn-two {
+    color: white; 
+    padding: 8px 15px;
+    display: inline-block;
+    border: 1px solid #00000036;
+    border-bottom-color: rgba(0,0,0,0.34);
+    text-shadow:0 1px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+                0 2px 0 -1px rgba(0,0,0,0.13), 
+                0 3px 0 -1px rgba(0,0,0,0.08), 
+                0 3px 13px -1px rgba(0,0,0,0.21);
+    text-decoration: none;
+}
+
+.btn-two:active {
+    top: 1px;
+    border-color: #00000057 #00000036;
+    color:  #333; 
+    background-color: #5fa37a; 
+}
+
+/* 검색창 디자인 */
+.search {
+    position: relative;
+    width: 200px;
+    display: inline-block;
+}
+  
+#searchWord {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 10px;
+    font-size: 14px;
+}
+
+.searchButton {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    border: none; 
+    background: none; 
+    padding: 0; 
+    cursor: pointer; /* 커서 모양 변경 */
+}
+
+.searchButton img {
+    width: 16px;
+    height: 16px; 
+}
+
+/* 콘텐츠의 감정별 플레이리스트 레이아웃 */
+.playlist-content {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    gap: 20px; /* 요소 간 10px 간격 */
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #F1F6E8; 
+    border: 3px solid #A2C089; /* 테두리 색상 */
+}
+
+/* 감정별 SELECT의 레이아웃 */
+.playlist-select {
+    margin-top: 0;  /* 상단 여백 설정 */
+    margin-left: 0; /* 왼쪽 여백 설정 */
+}
+
+.selectBox {
+    margin-top: 10px;
+    margin-left: 10px;
+    position: relative;
+    width: 130px;
+    height: 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #b5d89d;  
+    border: 1px solid #00000036; 
+    border-bottom-color: rgba(0,0,0,0.34);
+    text-shadow:0 1px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+                0 2px 0 -1px rgba(0,0,0,0.13), 
+                0 3px 0 -1px rgba(0,0,0,0.08), 
+                0 3px 13px -1px rgba(0,0,0,0.21);
+    text-decoration: none;
+}
+
+.selectBox .select {
+    width: inherit;
+    height: inherit;
+    color: #fff;
+    border: 1px solid #00000036;
+    background: transparent;
+    border: 0 none;
+    outline: 0 none;
+    padding: 0 5px;
+    position: relative;
+    z-index: 2; /* select가 위에 표시됨 */
+}
+
+.select option {
+    background: #b5d89d;
+    color: #ffffff;
+    padding: 3px 0;
+    font-size: 16px;
+}
+
+/* 아이콘의 스타일 */
+.selectBox .icoArrow {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    z-index: 1; /* select보다 아래에 표시됨 */
+    width: 35px; 
+    height: inherit;
+    border-left: 1px solid #00000036;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.selectBox .icoArrow img {
+    width: 50%;
+    transition: .3s; /* 아이콘 이미지의 부드러운 회전 */
+}
+  
+.selectBox .select:focus + .icoArrow img {
+    transform: rotate(180deg); /* select가 focus되면 아이콘이 회전 */
+}
+
+/* 감정별 플레이리스트의 레이아웃 */
+.playlist-section {
+    flex: 1;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    gap: 20px;
+    flex-direction: row; /* 가로 정렬 */
+    justify-content: flex-start; /* 왼쪽 정렬, 콘텐츠가 왼쪽에서부터 나타남 */
+    align-items: flex-start; /* 콘텐츠 상단 정렬 */
+}
+
+.playlist-song-info, .playlist-movie-info {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: left;
+    gap: 10px; /* 이미지와 텍스트 사이 간격 */
+    border: 1px solid #A2C089; /* 테두리 색상 */
+}
+
+.playlist-song-info img, .playlist-movie-info img {
+    width: 150px;
+    height: 150px;
+}
+
+.playlist-song-details p, .playlist-movie-details p {
+    margin: 0;
+    font-size: 12px;
+    text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+.playlist-song-details strong, .playlist-movie-details strong {
+    font-size: 16px;
+    text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+
+
+
+
+
+
+.bottom {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    background-color: #FFFEF1;
+  }
