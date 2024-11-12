@@ -7,14 +7,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/menu_bar.css">
     <link rel="stylesheet" href="../css/messagestyle.css">
     <link rel="stylesheet" href="../css/chatroom.css">
 </head>
 
 <body>
-    <header style="height: 50px; display: flex; justify-content: space-between; align-items: center;">
-        <h2>FeelFlow</h2>
-    </header>
+    <!-- 네비게이션바 : 머리말 부분-->
+    <div class="menu-top">
+        <div class="menu-bar2 menu-bar-item2">
+            <a href="../php/feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
+            <!-- 네비게이션바 -->
+            <div class="menu-bar2">
+                <a href="../html/emotion_calender" class="menu-button menu-bar-item2">감정 캘린더</a>
+                <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
+                <a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>
+                <a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>
+                <!--마이메이지, 사용자 이미지로 변경하기-->
+                <a href="feel_mypage.php" class="menu-button menu-bar2 menu-bar-item2">마이페이지</a>
+            </div>
+        </div>
+    </div>
+    <div class="space">
+    </div>
     <div class="maindiv">
         <!--메시지 목록-->
         <div class="message_list">
@@ -195,7 +210,7 @@
         </div>
         <!--채팅창-->
         <div class="message_chat">
-            <header class="chat_header">
+            <div class="chat_header">
                 <span class="profile_img_padding">
                     <img class="profile_img"
                         src="https://mb.cision.com/Public/21334/3774787/bfceb21f44c906a6_800x800ar.jpg" alt="사용자 프로필">
@@ -203,7 +218,7 @@
                 <div class="profile_col">
                     <span class="profile_name">사용자 4</span>
                 </div>
-            </header>
+            </div>
             <main>
                 <!-- 채팅 내용 -->
                 <div class="main-chat">
@@ -283,7 +298,8 @@
                             </span>
                             <span class="icon">
                                 <img class="icon" src="../imgsrc/picture.png">
-                            </span></div>
+                            </span>
+                        </div>
                         <textarea name="chat-insert" required placeholder="메시지 입력..."></textarea>
                         <input type="submit" class="chat-submit" value="전송">
                     </form>
@@ -296,10 +312,10 @@
                         <i class="icon-camera"></i>
                     </div>
                 </div>
+            </main>
         </div>
-
-        </main>
     </div>
+
     </div>
 </body>
 
