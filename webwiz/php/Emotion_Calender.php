@@ -101,36 +101,42 @@ if (isset($_SESSION['user_id'])) {
         <div id="calendar"></div> <!-- 캘린더가 렌더링될 div -->
     </div>
 
-    <!-- 감정 이모지 설명 -->
     <div class="right-section">
         <div class="chart-section">
-            <h2>감정 캘린더 날씨 이모지</h2>
-            <div class="chart" id="overall-trend">
-                <div class="emotion-set">
-                    <img src="../imgsrc/sunny.png" alt="이모지">
-                    <h1>sunny: 감정 긍정 점수 60점 이상 </h1>
-                </div>
-                <div class="emotion-set">
-                    <img src="../imgsrc/rainy.png" alt="이모지">
-                    <h1>rainy: 감정 부정 점수 40점 이상 </h1>
-                </div>
-                <div class="emotion-set">
-                    <img src="../imgsrc/normal.png" alt="이모지">
-                    <h1>normal: 감정 중립 점수 50점 이상 </h1>
-                </div>
-                <div class="emotion-set">
-                    <img src="../imgsrc/lightning.png" alt="이모지">
-                    <h1>lightning: 감정 부정 점수 80점 이상 </h1>
-                </div>
-                <div class="emotion-set">
-                    <img src="../imgsrc/cloudrainy.png" alt="이모지">
-                    <h1>cloudrainy: 감정 부정 점수 60점 이상 80점 미만 </h1>
-                </div>
-                <div class="emotion-set">
-                    <img src="../imgsrc/snow.png" alt="이모지">
-                    <h1>snow: 감정 긍정 점수 40점 이상, 감정 중립 점수 30점 이상 </h1>
-                </div>
-            </div>
+            <table class="emotion-table">
+                <tbody>
+                <tr>
+                    <td><img src="../imgsrc/sunny.png" alt="이모지"></td>
+                    <td>sunny</td>
+                    <td>감정 긍정 점수 60점 이상</td>
+                </tr>
+                <tr>
+                    <td><img src="../imgsrc/rainy.png" alt="이모지"></td>
+                    <td>rainy</td>
+                    <td>감정 부정 점수 40점 이상</td>
+                </tr>
+                <tr>
+                    <td><img src="../imgsrc/normal.png" alt="이모지"></td>
+                    <td>normal</td>
+                    <td>감정 중립 점수 50점 이상</td>
+                </tr>
+                <tr>
+                    <td><img src="../imgsrc/lightning.png" alt="이모지"></td>
+                    <td>lightning</td>
+                    <td>감정 부정 점수 80점 이상</td>
+                </tr>
+                <tr>
+                    <td><img src="../imgsrc/cloudrainy.png" alt="이모지"></td>
+                    <td>cloudrainy</td>
+                    <td>감정 부정 점수 60점 이상 80점 미만</td>
+                </tr>
+                <tr>
+                    <td><img src="../imgsrc/snow.png" alt="이모지"></td>
+                    <td>snow</td>
+                    <td>감정 긍정 점수 40점 이상, 감정 중립 점수 30점 이상</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
