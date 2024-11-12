@@ -50,12 +50,12 @@
 
         <!-- Chart.js 라이브러리 로드 -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-        <script>
+
+                <script>
             // 감정 비율 데이터 (임의의 비율)
-            const emotionLabels = ['Sunny', 'Rainy', 'Normal', 'Lightning', 'Cloudrainy', 'Snow'];
-            const musicData = [18, 15, 22, 14, 17, 14]; // 음악 콘텐츠의 감정 비율
-            const movieData = [21, 14, 18, 15, 18, 14]; // 영화 콘텐츠의 감정 비율
+            const emotionLabels = ['Sunny', 'Goodnight', 'Snow', 'Normal', 'Cloudrainy', 'Rainy', 'Lightning'];
+            const musicData = [17.8, 16.3, 16.3, 14.3, 14.3, 16.3, 17.6]; // 음악 콘텐츠의 감정 비율
+            const movieData = [17.5, 16.0, 14.5, 14.5, 16.0, 17.5]; // 영화 콘텐츠의 감정 비율
     
             // 차트 생성 함수
             function createChart(chartId, data, label) {
@@ -65,7 +65,7 @@
                         labels: emotionLabels,
                         datasets: [{
                             data: data,
-                            backgroundColor: ['#FFD700', '#1E90FF', '#8080802', '#FF4500', '#708090', '#B0E0E6'],
+                            backgroundColor: ['#FFD700', '#1E90FF', '#8080802', '#FF4500', '#708090', '#B0E0E6', '#A0E0E6'],
                         }]
                     },
                     options: {
@@ -89,7 +89,7 @@
             // 영화 통계 차트 생성
             createChart('movie-statistics', movieData, '영화 콘텐츠의 감정 분포');
         </script>
-
+        
         <!-- 오른쪽 섹션 -->
         <div class="right-section">
             <div class="top-content">
@@ -133,7 +133,7 @@
 
         const contentList = [
             {
-                title: "화창한 기분 일 때 추천하는 콘텐츠",
+                title: "행복한 기분 일 때 추천하는 콘텐츠",
                 song: {
                     cover: "top-song-cover.jpg",
                     title: "Love Lee",
@@ -148,7 +148,7 @@
                 }
             },
             {
-                title: "흐린 기분 일 때 추천하는 콘텐츠",
+                title: "우울한 기분 일 때 추천하는 콘텐츠",
                 song: {
                     cover: "sad-song-cover.jpg",
                     title: "Blue Rain",
@@ -163,7 +163,7 @@
                 }
             },
             {
-                title: "번개가 마구치는 기분 일 때 추천하는 콘텐츠",
+                title: "화난 기분 일 때 추천하는 콘텐츠",
                 song: {
                     cover: "angry-song-cover.jpg",
                     title: "Weightless",
@@ -289,13 +289,14 @@
             <!--SELECT 옵션 선택 -->
             <div class="selectBox">
                 <select name="sentiment" class="select" id="sentimentSelect">
-                    <option value="sentiment">sentiment 🌈</option>
-                    <option value="sunny">sunny</option>
-                    <option value="normal">normal</option>
-                    <option value="cloudrainy">cloudrainy</option>
+                    <option value="sentiment">Sentiment 🌈</option>
+                    <option value="sunny">Sunny</option>
+                    <option value="goodnight">Goodnight</option>
                     <option value="snow">snow</option>
-                    <option value="rainy">rainy</option>
-                    <option value="lightning">lightning</option>
+                    <option value="normal">Normal</option>
+                    <option value="cloudrainy">Cloudrainy</option>
+                    <option value="rainy">Rainy</option>
+                    <option value="lightning">Lightning</option>
                 </select>
                 <!--SELECT 옵션 - 줄 나눔-->
                 <span class="icoArrow">
