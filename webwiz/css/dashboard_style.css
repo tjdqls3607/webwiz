@@ -1,0 +1,179 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #FFFEF1, #D9EEDB);
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+}
+
+.red-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 80px;
+    background-color: #5fa37a;
+    border-radius: 0.75rem;
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+}
+
+.weather-icon {
+    width: 100px;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.today-emotion {
+    margin-left: 10px;
+}
+
+.right-content {
+    text-align: right;
+}
+
+.right-content h3 {
+    margin: 0;
+}
+
+.right-content h5 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.blue-section {
+    display: flexbox;
+    padding: 20px;
+    border: 2px solid #5fa37a;
+    border-radius: 0.75rem;
+}
+
+.green-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 2px solid #5fa37a;
+    border-radius: 0.75rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pink-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid #5fa37a;
+    border-radius: 0.75rem;
+    text-align: center
+}
+
+.green-pink-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.chart, .donut-chart {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.gender-age-chart {
+    flex: 1;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.gender-age-chart h2 {
+    margin-bottom: 30px;
+}
+
+.chart-title-period {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chart-title {
+    margin-right: 20px;
+}
+
+.music-content {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.box {
+    border: 1px solid black;
+    border-radius: 0.75rem;
+    padding: 30px;
+    height: 250px;
+}
+
+.box .title-solid {
+    font-weight: bold;
+}
+
+.emotion-music-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-rankings {
+    flex: 1;
+    justify-content: center;
+}
+
+.song-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.album-art {
+    width: 150px;
+    justify-content: center;
+    text-align: center;
+}
+
+.gender-album {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;    
+}
+
+.gender-album-art {
+    width: 100px;
+}
+
+.male-album, .female-album {
+    justify-content: center;
+    text-align: center;
+}
+
+button {
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 30rem;
+}
+
+.song-title {
+    font-size: 0.8rem;
+}
