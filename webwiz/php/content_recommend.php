@@ -16,7 +16,7 @@
         <!-- 네비게이션바 기타페이지 -->
         <div class="menu-bar2">
             <a href="../html/diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>
-            <a href="../php/emotion_calender.php" class="menu-button menu-bar-item2">감정 캘린더</a>
+            <a href="../php/emotion_calendar.php" class="menu-button menu-bar-item2">감정 캘린더</a>
             <a href="../php/dashboard.php" class="menu-button menu-bar-item2">감정분석 대시보드</a>
             <a href="../php/content_recommend.php" class="menu-button menu-bar-item2">콘텐츠 추천</a>
             <a href="../html/matching.html" class="menu-button menu-bar-item2">사용자 매칭</a>
@@ -43,8 +43,8 @@
     <!-- 왼쪽 섹션 -->
     <div class="left-section">
         <div class="chart-section">
-            <canvas id="music-statistics"></canvas>
-            <canvas id="movie-statistics"></canvas>
+            <canvas id="music-statistics" width="30" height="30"></canvas>
+            <canvas id="movie-statistics" width="30" height="10"></canvas>
         </div>
     </div>
 
@@ -55,7 +55,7 @@
         // 감정 비율 데이터 (임의의 비율)
         const emotionLabels = ['Sunny', 'Goodnight', 'Snow', 'Normal', 'Cloudrainy', 'Rainy', 'Lightning'];
         const musicData = [17.8, 16.3, 16.3, 14.3, 14.3, 16.3, 17.6]; // 음악 콘텐츠의 감정 비율
-        const movieData = [17.5, 16.0, 14.5, 14.5, 16.0, 17.5]; // 영화 콘텐츠의 감정 비율
+        const movieData = [15.5, 14.0, 14.5, 13.5, 15.0, 15.5, 12.0]; // 영화 콘텐츠의 감정 비율
 
         // 차트 생성 함수
         function createChart(chartId, data, label) {
@@ -65,7 +65,7 @@
                     labels: emotionLabels,
                     datasets: [{
                         data: data,
-                        backgroundColor: ['#FFD700', '#1E90FF', '#8080802', '#FF4500', '#708090', '#B0E0E6'],
+                        backgroundColor: ['#FFD700', '#1E90FF', '#8080802', '#FF4500', '#708090', '#B0E0E6', '#A3E1D3'],
                     }]
                 },
                 options: {
@@ -82,7 +82,6 @@
                 }
             });
         }
-
         // 음악 통계 차트 생성
         createChart('music-statistics', musicData, '음악 콘텐츠의 감정 분포');
 
@@ -133,7 +132,7 @@
 
     const contentList = [
         {
-            title: "화창한 기분 일 때 추천하는 콘텐츠",
+            title: "행복한 기분 일 때 추천하는 콘텐츠",
             song: {
                 cover: "../imgsrc/top-song-cover.jpg",
                 title: "Love Lee",
@@ -148,7 +147,7 @@
             }
         },
         {
-            title: "흐린 기분 일 때 추천하는 콘텐츠",
+            title: "우울한 기분 일 때 추천하는 콘텐츠",
             song: {
                 cover: "../imgsrc/sad-song-cover.jpg",
                 title: "Blue Rain",
@@ -163,7 +162,7 @@
             }
         },
         {
-            title: "번개가 마구치는 기분 일 때 추천하는 콘텐츠",
+            title: "화난 기분 일 때 추천하는 콘텐츠",
             song: {
                 cover: "../imgsrc/angry-song-cover.jpg",
                 title: "Weightless",
@@ -206,13 +205,38 @@
     }
 </script>
 
-<!-- 콘텐츠 종류 선택 및 서치 -->
+<!-- 콘텐츠 선택 및 서치 -->
 <div class="content-recommendation">
-    <!-- 콘텐츠 선택 버튼 - 음악, 영화 -->
+    <!--SELECT 옵션 선택 -->
     <div class="left-content2">
-        <a href="../php/content_recommend.php" class="btn-two green rounded">음악</a>
-        <a href="../html/content_recommend_movie.html" class="btn-two green rounded">영화</a>
+        <div class="content-selectBox">
+            <select class="content_select" id="contentTypeSelect">
+                <option value="music">음악🎧</option>
+                <option value="movie">영화🎬</option>
+            </select>
+            <!--SELECT 옵션 - 줄 나눔-->
+            <span class="icoArrow">
+                    <img src="https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png" alt="">
+                </span>
+        </div>
+        <div class="selectBox">
+            <select class="select" id="sentimentSelect">
+                <option value="sentiment">감정분류🌈</option>
+                <option value="sunny">행복</option>
+                <option value="goodnight">기쁨</option>
+                <option value="snow">편안함</option>
+                <option value="normal">평온함</option>
+                <option value="cloudrainy">우울함</option>
+                <option value="rainy">슬픔</option>
+                <option value="lightning">화남</option>
+            </select>
+            <!--SELECT 옵션 - 줄 나눔-->
+            <span class="icoArrow">
+                    <img src="https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png" alt="">
+                </span>
+        </div>
     </div>
+
     <!-- 콘텐츠 검색창 -->
     <div class="right-content2">
         <form action="" method="GET" class="search-form">
@@ -284,26 +308,6 @@ if (isset($_GET['searchWord']) && !empty($_GET['searchWord'])) {
 
 <!-- 콘텐츠의 감정별 플레이리스트 -->
 <div class="playlist-content">
-    <!-- 플레이리스트 SELECT -->
-    <div class="playlist-select">
-        <!--SELECT 옵션 선택 -->
-        <div class="selectBox">
-            <select name="sentiment" class="select" id="sentimentSelect">
-                <option value="sentiment">sentiment 🌈</option>
-                <option value="sunny">sunny</option>
-                <option value="goodnight">Goodnight</option>
-                <option value="normal">normal</option>
-                <option value="cloudrainy">cloudrainy</option>
-                <option value="snow">snow</option>
-                <option value="rainy">rainy</option>
-                <option value="lightning">lightning</option>
-            </select>
-            <!--SELECT 옵션 - 줄 나눔-->
-            <span class="icoArrow">
-                    <img src="https://freepikpsd.com/media/2019/10/down-arrow-icon-png-7-Transparent-Images.png" alt="">
-                </span>
-        </div>
-    </div>
     <!-- 플레이리스트 섹션 -->
     <div class="playlist-section">
         <!-- 플레이리스트의 콘텐츠 정보 -->
@@ -336,6 +340,7 @@ if (isset($_GET['searchWord']) && !empty($_GET['searchWord'])) {
                 <p>Marconi Union</p>
             </div>
         </div>
+
     </div>
 </div>
 
@@ -357,12 +362,6 @@ if (isset($_GET['searchWord']) && !empty($_GET['searchWord'])) {
         });
     });
 </script>
-
-
-
-
-
-
 
 <div class="bottom"></div>
 
