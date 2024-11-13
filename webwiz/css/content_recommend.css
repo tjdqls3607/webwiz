@@ -190,7 +190,7 @@ body {
 
 /* 콘텐츠 유형 SELECT */
 .content-selectBox {
-    margin-left: 10px;
+    margin-left: 5px;
     position: relative;
     width: 100px;
     height: 35px;
@@ -219,7 +219,6 @@ body {
     outline: 0 none;
     padding: 0 5px;
     position: relative;
-    z-index: 2; /* select가 위에 표시됨 */
 }
 
 .content_selectBox option {
@@ -273,7 +272,6 @@ body {
     outline: 0 none;
     padding: 0 5px;
     position: relative;
-    z-index: 2; /* select가 위에 표시됨 */
 }
 
 .select option {
@@ -387,4 +385,4 @@ body {
     width: 100%;
     height: 50px;
     background-color: #FFFEF1;
-  }
+}
