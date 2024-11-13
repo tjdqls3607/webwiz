@@ -16,9 +16,9 @@ if ($isLoggedIn) {
     echo '<a href="../php/logout.php" class="menu-button menu-bar-item2">로그아웃</a>';
     echo '<a href="../html/diary_write.html" class="menu-button menu-bar-item2">새로운 일기</a>';
     echo '<a href="../php/emotion_calender.php" class="menu-button menu-bar-item2">감정 캘린더</a>';
-    echo '<a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>';
-    echo '<a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>';
-    echo '<a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>';
+    echo '<a href="dashboard.php" class="menu-button menu-bar-item2">감정분석 대시보드</a>';
+    echo '<a href="content_recommend.php" class="menu-button menu-bar-item2">콘텐츠 추천</a>';
+    echo '<a href="../html/matching.html" class="menu-button menu-bar-item2">사용자 매칭</a>';
 } else {
     // 로그인 되지 않은 경우
     echo '<a href="../html/login.html" class="menu-button menu-bar-item2">로그인</a>';
@@ -82,15 +82,15 @@ echo '</script>';
         <p>사용자의 감정을 일기예보처럼 기록하고 분석해, 각 날짜에 해당하는 감정을 날씨 이모지로 시각화 합니다. 자신의 감정 변화를 한 눈에 파악해보세요.</p>
     </div>
     <div>
-        <img src="https://via.placeholder.com/100" alt="Feature 2">
+        <img src="../imgsrc/100x100(3).png" alt="Feature 2">
         <p>감정 기록을 통해 다양한 통계 그래프와 분석 결과를 제공합니다. 실시간 감정 변화와 패턴을 확인해보세요.</p>
     </div>
     <div>
-        <img src="https://via.placeholder.com/100" alt="Feature 3">
+        <img src="../imgsrc/100x100(2).png" alt="Feature 3">
         <p>텍스트 감정분석을 기반으로, 사용자 맞춤형 콘텐츠를 추천합니다. 나만의 콘텐츠를 만나보세요.</p>
     </div>
     <div>
-        <img src="https://via.placeholder.com/100" alt="Feature 4">
+        <img src="../imgsrc/100x100(4).png" alt="Feature 4">
         <p>비슷한 감정을 가진 사람들과 그룹 매칭을 제공합니다. 감정을 나누고 친구를 만나보세요.</p>
     </div>
 </section>
