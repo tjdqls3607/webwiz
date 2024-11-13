@@ -175,39 +175,31 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-left: 10px;
-    margin-right: 40px;
+    margin-right: 10px;
+    border-radius: 0.75rem;
+    background-color: #5fa37a;
+    padding: 20px;
 }
 
-.left-content2 {
+.left-content2, .right-content2 {
     display: flex;
     align-items: center;
 }
 
-.right-content2 {
-    display: flex;
-    align-items: center;
-}
-
-/* 버튼 디자인 */
-.btn-two {
-    margin: 10px;
-}
-
-.btn-two.green {
-    background-color: #b5d89d;
-}
-
-.rounded {
+/* 콘텐츠 유형 SELECT */
+.content-selectBox {
+    margin-left: 10px;
+    position: relative;
+    width: 100px;
+    height: 35px;
     border-radius: 10px;
-}
-
-.btn-two {
-    color: white; 
-    padding: 8px 15px;
-    display: inline-block;
-    border: 1px solid #00000036;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #FFFEF1;  
+    border: 1px solid #00000036; 
     border-bottom-color: rgba(0,0,0,0.34);
     text-shadow:0 1px 0 rgba(0,0,0,0.15);
     box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
@@ -217,11 +209,91 @@ body {
     text-decoration: none;
 }
 
-.btn-two:active {
-    top: 1px;
-    border-color: #00000057 #00000036;
-    color:  #333; 
-    background-color: #5fa37a; 
+.content-selectBox .content_select {
+    width: inherit;
+    height: inherit;
+    color: #000000;
+    border: 1px solid #00000036;
+    background: transparent;
+    border: 0 none;
+    outline: 0 none;
+    padding: 0 5px;
+    position: relative;
+    z-index: 2; /* select가 위에 표시됨 */
+}
+
+.content_selectBox option {
+    background: #FFFEF1;
+    color: #000000;
+    padding: 3px 0;
+    font-size: 16px;
+}
+
+/* 아이콘의 스타일 */
+.content-selectBox .icoArrow {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    width: 35px; 
+    height: inherit;
+    border-left: 1px solid #00000036;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 감정 유형 SELECT */
+.selectBox {
+    margin-left: 10px;
+    position: relative;
+    width: 120px;
+    height: 35px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: #FFFEF1;  
+    border: 1px solid #00000036; 
+    border-bottom-color: rgba(0,0,0,0.34);
+    text-shadow:0 1px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+                0 2px 0 -1px rgba(0,0,0,0.13), 
+                0 3px 0 -1px rgba(0,0,0,0.08), 
+                0 3px 13px -1px rgba(0,0,0,0.21);
+    text-decoration: none;
+}
+
+.selectBox .select {
+    width: inherit;
+    height: inherit;
+    color: #000000;
+    border: 1px solid #00000036;
+    background: transparent;
+    border: 0 none;
+    outline: 0 none;
+    padding: 0 5px;
+    position: relative;
+    z-index: 2; /* select가 위에 표시됨 */
+}
+
+.select option {
+    background: #FFFEF1;
+    color: #000000;
+    padding: 3px 0;
+    font-size: 16px;
+}
+
+/* 아이콘의 스타일 */
+.selectBox .icoArrow {
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    width: 35px; 
+    height: inherit;
+    border-left: 1px solid #00000036;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* 검색창 디자인 */
@@ -229,6 +301,7 @@ body {
     position: relative;
     width: 200px;
     display: inline-block;
+    right: 25px;
 }
   
 #searchWord {
@@ -271,80 +344,11 @@ body {
     border: 3px solid #A2C089; /* 테두리 색상 */
 }
 
-/* 감정별 SELECT의 레이아웃 */
-.playlist-select {
-    margin-top: 0;  /* 상단 여백 설정 */
-    margin-left: 0; /* 왼쪽 여백 설정 */
-}
-
-.selectBox {
-    margin-top: 10px;
-    margin-left: 10px;
-    position: relative;
-    width: 130px;
-    height: 35px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    background-color: #b5d89d;  
-    border: 1px solid #00000036; 
-    border-bottom-color: rgba(0,0,0,0.34);
-    text-shadow:0 1px 0 rgba(0,0,0,0.15);
-    box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
-                0 2px 0 -1px rgba(0,0,0,0.13), 
-                0 3px 0 -1px rgba(0,0,0,0.08), 
-                0 3px 13px -1px rgba(0,0,0,0.21);
-    text-decoration: none;
-}
-
-.selectBox .select {
-    width: inherit;
-    height: inherit;
-    color: #fff;
-    border: 1px solid #00000036;
-    background: transparent;
-    border: 0 none;
-    outline: 0 none;
-    padding: 0 5px;
-    position: relative;
-    z-index: 2; /* select가 위에 표시됨 */
-}
-
-.select option {
-    background: #b5d89d;
-    color: #ffffff;
-    padding: 3px 0;
-    font-size: 16px;
-}
-
-/* 아이콘의 스타일 */
-.selectBox .icoArrow {
-    position: absolute; 
-    top: 0; 
-    right: 0; 
-    z-index: 1; /* select보다 아래에 표시됨 */
-    width: 35px; 
-    height: inherit;
-    border-left: 1px solid #00000036;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-.selectBox .icoArrow img {
-    width: 50%;
-    transition: .3s; /* 아이콘 이미지의 부드러운 회전 */
-}
-  
-.selectBox .select:focus + .icoArrow img {
-    transform: rotate(180deg); /* select가 focus되면 아이콘이 회전 */
-}
-
 /* 감정별 플레이리스트의 레이아웃 */
 .playlist-section {
     flex: 1;
     display: flex;
+    margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -377,12 +381,6 @@ body {
     font-size: 16px;
     text-align: center; /* 텍스트를 가운데 정렬 */
 }
-
-
-
-
-
-
 
 .bottom {
     margin-top: 30px;
