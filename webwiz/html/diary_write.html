@@ -32,6 +32,8 @@
                     // 1,000자 넘으면 알림창 뜨도록
                     alert("일기 내용은 최대 1,000자까지 입력 가능합니다.");
                 }
+
+
             });
         });
     </script>
@@ -43,46 +45,18 @@
         <div class="menu-bar2 menu-bar-item2">
             <a href="../php/feelflow_home.php" class="menu-bar1 menu-button menu-bar-item1"><b>FeelFlow</b></a>
             <!-- 네비게이션바 -->
-            <div class="menu-bar2">
+            <div class="menu-bar">
                 <a href="../php/emotion_calender.php" class="menu-button menu-bar-item2">감정 캘린더</a>
-                <a href="#emotion_dash_board" class="menu-button menu-bar-item2">감정분석 대시보드</a>
-                <a href="#content" class="menu-button menu-bar-item2">콘텐츠 추천</a>
-                <a href="#matching" class="menu-button menu-bar-item2">사용자 매칭</a>
+                <a href="../php/dashboard.php" class="menu-button menu-bar-item2">감정분석 대시보드</a>
+                <a href="../php/content_recommend.php" class="menu-button menu-bar-item2">콘텐츠 추천</a>
+                <a href="../html/matching.html" class="menu-button menu-bar-item2">사용자 매칭</a>
                 <!--마이메이지, 사용자 이미지로 변경하기-->
-                <a href="../php/feel_mypage.php" class="menu-button menu-bar2 menu-bar-item2">마이페이지</a>
+                <a href="../php/feel_mypage.php" class="menu-button menu-bar menu-bar-item2">마이페이지</a>
             </div>
         </div>
     </div>
     <div class="main_div">
-        <div class="leftbar">
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/font.png"></span>
-            </div>
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/textsize.png"></span>
-            </div>
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/textcolor.png"></span>
-            </div>
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/paint.png"></span>
-            </div>
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/bold.png"></span>
-            </div>
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/italic.png"></span>
-            </div>
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/underline.png"></span>
-            </div>
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/align.png"></span>
-            </div>
-            <div class="side_element">
-                <span><img class="element_img" src="../imgsrc/sticker.png"></span>
-            </div>
-        </div>
+
         <div style="margin-right: 50px;">
             <!--form 태그, 입력된 데이터를 한 번에 서버로 전송한다-->
             <form name="diary_write" method="post" action="../php/analysis_results.php">
@@ -98,50 +72,6 @@
                 <!--일기 텍스트 제출하기 버튼-->
                 <button type="submit" class="submit-button">작성완료</button>
             </form>
-        </div>
-        <div class="rightbar">
-            <div class="imoji_border">
-                <div style="margin-bottom: 20px;"></div>
-                <div class="right_side">
-                    <div class="right_div">
-                        <span class="right_element"><img class="element_img" src="../imgsrc/sticker_imoji.png"></span>
-                        <span class="right_element"><img class="element_img" src="../imgsrc/sticker_imoji.png"></span>
-                    </div>
-                </div>
-                <div class="right_side">
-                    <div class="right_div">
-                        <span class="right_element"><img class="element_img" src="../imgsrc/sticker_imoji.png"></span>
-                        <span class="right_element"><img class="element_img" src="../imgsrc/sticker_imoji.png"></span>
-                    </div>
-                </div>
-                <div class="right_side">
-                    <div class="right_div">
-                        <span class="right_element"><img class="element_img" src="../imgsrc/sticker_imoji.png"></span>
-                        <span class="right_element"><img class="element_img" src="../imgsrc/sticker_imoji.png"></span>
-                    </div>
-                </div>
-                <div class="right_side">
-                    <div class="right_div">
-                        <span class="right_element"><img class="element_img" src="../imgsrc/sticker_imoji.png"></span>
-                        <span class="right_element"><img class="element_img" src="../imgsrc/sticker_imoji.png"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="imoji_border" style="margin-top: 40px;">
-                <div style="margin-bottom: 40px;"></div>
-                <div class="right_side">
-                    <div class="right_div">
-                        <span class="right_element">item 1</span>
-                        <span class="right_element">item 2</span>
-                    </div>
-                </div>
-                <div class="right_side">
-                    <div class="right_div">
-                        <span class="right_element">item 3</span>
-                        <span class="right_element">item 4</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </body>
